@@ -1,1 +1,125 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | BUT Informatique</title>
+    <!-- Police Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Icônes FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barre de navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Ton<span>Nom</span>.</a>
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- En-tête / Accueil -->
+    <header id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Bonjour, je suis <span>Ton Prénom</span></h1>
+            <h2>Étudiant en BUT Informatique</h2>
+            <p>Passionné par le développement web et logiciel. Actuellement à la recherche d'un stage ou d'une alternance pour mettre en pratique mes compétences.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                <a href="lien_vers_ton_cv.pdf" target="_blank" class="btn btn-secondary">Télécharger mon CV</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Compétences -->
+    <section id="skills" class="section">
+        <h2 class="section-title">Mes Compétences</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>Développement Web</h3>
+                <p>HTML5, CSS3, JavaScript, PHP</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-brands fa-java"></i>
+                <h3>Développement Logiciel</h3>
+                <p>Java, C++, Python</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-database"></i>
+                <h3>Bases de Données</h3>
+                <p>SQL, PostgreSQL, MySQL</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-server"></i>
+                <h3>Outils & Système</h3>
+                <p>Git, GitHub, Linux (Bash)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projects" class="section bg-alt">
+        <h2 class="section-title">Mes Projets (SAE & Perso)</h2>
+        <div class="projects-grid">
+            
+            <!-- Projet 1 -->
+            <article class="project-card">
+                <!-- Remplace le src par l'image de ton projet -->
+                <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="project-content">
+                    <h3>Application de Gestion (SAE 2.01)</h3>
+                    <p>Développement d'une application de gestion de stock en Java avec une interface graphique JavaFX et une base de données PostgreSQL.</p>
+                    <div class="project-tags">
+                        <span>Java</span>
+                        <span>PostgreSQL</span>
+                        <span>UML</span>
+                    </div>
+                    <a href="lien_vers_ton_github" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Voir le code</a>
+                </div>
+            </article>
+
+            <!-- Projet 2 -->
+            <article class="project-card">
+                <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="project-content">
+                    <h3>Site Web E-commerce (SAE 1.05)</h3>
+                    <p>Création d'un site web vitrine et e-commerce responsive de A à Z. Focus sur l'accessibilité et le référencement.</p>
+                    <div class="project-tags">
+                        <span>HTML/CSS</span>
+                        <span>PHP</span>
+                        <span>JS</span>
+                    </div>
+                    <a href="lien_vers_ton_github" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Voir le code</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section">
+        <h2 class="section-title">Me Contacter</h2>
+        <p style="text-align: center; margin-bottom: 30px;">Je suis ouvert aux opportunités d'alternance et de stage. N'hésitez pas à me contacter !</p>
+        <div class="contact-links">
+            <a href="mailto:ton.email@email.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="lien_linkedin" target="_blank" class="contact-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="lien_github" target="_blank" class="contact-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 Ton Prénom Ton Nom - Développé avec passion pour le BUT Informatique.</p>
+    </footer>
+
+</body>
+</html>
