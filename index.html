@@ -3,134 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio BUT Informatique - Parcours C</title>
+    <title>Portfolio - Baptiste Durand-Keohavong</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>Portfolio de Baptiste Durand-Keohavong</h1>
-        <p>B.U.T. Informatique - 3ème Année - Parcours C : Administration, gestion et exploitation des données</p>
-        <p>IUT de Montreuil, Université Paris 8</p>
+        <h1>Baptiste Durand-Keohavong</h1>
+        <p>Étudiant en BUT Informatique - 3ème Année (Parcours C)</p>
+        <p>IUT de Montreuil - Recherche d'alternance</p>
     </header>
 
     <nav>
-        <ul>
-            <li><a href="#demarche">Ma Démarche</a></li>
-            <li><a href="#competences">Lecture par Compétences</a></li>
-            <li><a href="#projets">Lecture par Projets</a></li>
-        </ul>
+        <a href="#competences">Lecture par Compétences</a>
+        <a href="#projets">Lecture par Projets</a>
     </nav>
 
     <main>
-        <!-- Démarche réflexive -->
-        <section id="demarche" class="intro-section">
-            <h2>Posture Réflexive</h2>
-            <p>Ce portfolio, réalisé dans le cadre du semestre 6, permet d'évaluer le processus d'acquisition des niveaux de compétence de la troisième année du B.U.T. Il fait la démonstration de mes capacités par la mobilisation d'éléments de preuve argumentés. Il engage une posture réflexive et de distanciation critique en cohérence avec le parcours C, tout en s'appuyant sur l'ensemble des mises en situation proposées dans le cadre des SAÉ et de mes expériences professionnelles.</p>
+        <!-- DOUBLE LECTURE : PARTIE 1 - PAR COMPÉTENCES -->
+        <section id="competences">
+            <h2>Lecture par les Compétences</h2>
+            
+            <div class="card-container">
+                <div class="card">
+                    <h3>Compétence 1 : Gérer des données de l'information</h3>
+                    <p>Concevoir, mettre en place, optimiser et administrer une base de données, et visualiser des données hétérogènes.</p>
+                    <strong>Projets mobilisant cette compétence :</strong>
+                    <div class="tags">
+                        <span class="tag tag-project">Expérience TotalEnergies (Reporting / BDD)</span>
+                        <span class="tag tag-project">Projet : Base de données Jouets (SQL)</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Compétence 2 : Conduire un projet</h3>
+                    <p>Identifier les besoins clients, mettre en place des outils de suivi, formaliser et participer à la mise en œuvre d'un projet informatique.</p>
+                    <strong>Projets mobilisant cette compétence :</strong>
+                    <div class="tags">
+                        <span class="tag tag-project">Plateforme de Buvette (PHP/Web)</span>
+                        <span class="tag tag-project">Jeu Terraria-like (Java)</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Compétence 3 : Collaborer au sein d'une équipe informatique</h3>
+                    <p>Situer son rôle, appliquer une démarche d'intégration d'équipe, et acquérir des compétences interpersonnelles.</p>
+                    <strong>Projets mobilisant cette compétence :</strong>
+                    <div class="tags">
+                        <span class="tag tag-project">Tous les projets IUT (Équipe)</span>
+                        <span class="tag tag-project">Expérience Assistant Coordinateur Vente</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- LECTURE PAR COMPÉTENCES -->
-        <h2 id="competences" class="section-title">Lecture par les Compétences</h2>
-        <div class="skills-grid">
+        <!-- DOUBLE LECTURE : PARTIE 2 - PAR PROJETS -->
+        <section id="projets">
+            <h2>Lecture par les Projets</h2>
             
-            <!-- Compétence 1 -->
-            <div class="skill-card">
-                <h3>Compétence 1 : Gérer des données de l'information</h3>
-                <ul class="skill-list">
-                    <li>Concevoir et mettre en place une base de données à partir d'un cahier des charges client.</li>
-                    <li>Mettre à jour et interroger une base de données relationnelle.</li>
-                    <li>Organiser la restitution des données par la programmation et la visualisation.</li>
-                    <li>Préparer et extraire les données pour l'exploitation.</li>
-                </ul>
-                <div class="project-tags">
-                    <span class="tag">Preuve : Expérience TotalEnergies (Mise à jour BDD & Dashboard)</span>
-                    <span class="tag">Preuve : SAÉ Création base de données (SQL)</span>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Assistant Coordinateur Vente - TotalEnergies</h3>
+                    <p>Mise à jour de la base de données clients, création de scripts VBA avec Excel pour l'automatisation, et création d'outils de reporting (Dashboard).</p>
+                    <strong>Compétences acquises/mobilisées :</strong>
+                    <div class="tags">
+                        <span class="tag">Compétence 1 : Gérer des données</span>
+                        <span class="tag">Compétence 3 : Collaborer / Rendre compte</span>
+                        <span class="tag">VBA</span>
+                        <span class="tag">Excel</span>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Compétence 2 -->
-            <div class="skill-card">
-                <h3>Compétence 2 : Conduire un projet</h3>
-                <ul class="skill-list">
-                    <li>Identifier les besoins métiers des clients et des utilisateurs.</li>
-                    <li>Appréhender les besoins du client et de l'utilisateur.</li>
-                    <li>Participer à la conception et à la mise en œuvre d'un projet système d'information.</li>
-                </ul>
-                <div class="project-tags">
-                    <span class="tag">Preuve : Plateforme de gestion de buvette</span>
-                    <span class="tag">Preuve : Développement du Jeu Terraria-like</span>
+                <div class="card">
+                    <h3>Plateforme de gestion de buvette associative</h3>
+                    <p>Création en équipe d'une plateforme web permettant la gestion d'une buvette en ligne avec différents rôles (client, barman, gestionnaire).</p>
+                    <strong>Compétences acquises/mobilisées :</strong>
+                    <div class="tags">
+                        <span class="tag">Compétence 2 : Conduire un projet</span>
+                        <span class="tag">Compétence 3 : Collaborer en équipe</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">HTML/CSS</span>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Compétence 3 -->
-            <div class="skill-card">
-                <h3>Compétence 3 : Collaborer au sein d'une équipe informatique</h3>
-                <ul class="skill-list">
-                    <li>Identifier ses aptitudes pour travailler dans une équipe.</li>
-                    <li>Situer son rôle et ses missions au sein d'une équipe informatique.</li>
-                    <li>Rendre compte de son activité professionnelle.</li>
-                </ul>
-                <div class="project-tags">
-                    <span class="tag">Preuve : Travail en équipe (Projets Buvette, Jeu Java, BDD)</span>
-                    <span class="tag">Preuve : Expérience d'Assistant coordinateur (TotalEnergies)</span>
+                <div class="card">
+                    <h3>Jeu Terraria-like</h3>
+                    <p>Création en équipe d'un jeu vidéo développé en Java, s'inspirant des mécaniques du jeu Terraria.</p>
+                    <strong>Compétences acquises/mobilisées :</strong>
+                    <div class="tags">
+                        <span class="tag">Compétence 2 : Conduire un projet</span>
+                        <span class="tag">Compétence 3 : Collaborer en équipe</span>
+                        <span class="tag">Java</span>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- LECTURE PAR PROJETS -->
-        <h2 id="projets" class="section-title">Lecture par les Projets et Expériences</h2>
-        <div class="projects-grid">
-            
-            <!-- Expérience 1 -->
-            <div class="project-card">
-                <h3>Expérience : Assistant coordinateur vente</h3>
-                <p><strong>Contexte :</strong> Expérience professionnelle chez TotalEnergies Marketing France (Avril à Juillet 2026 à Nanterre).</p>
-                <p><strong>Réalisations :</strong> Mise à jour de la base de données clients, création de scripts VBA avec Excel pour automatiser des fluxs, et création d'outils de reporting et d'analyse (Dashboard).</p>
-                <div class="project-tags">
-                    <span class="tag" style="background-color: var(--secondary-color); color: white;">Comp. 1 : Mettre à jour des BDD</span>
-                    <span class="tag" style="background-color: var(--secondary-color); color: white;">Comp. 1 : Visualiser des données</span>
-                    <span class="tag" style="background-color: var(--secondary-color); color: white;">Comp. 3 : Rendre compte de son activité</span>
+                <div class="card">
+                    <h3>Création d'une base de données de jouets</h3>
+                    <p>Conception et développement en équipe d'une base de données relationnelle sur le thème des jouets et développement de requêtes SQL.</p>
+                    <strong>Compétences acquises/mobilisées :</strong>
+                    <div class="tags">
+                        <span class="tag">Compétence 1 : Gérer des données</span>
+                        <span class="tag">SQL / PostgreSQL</span>
+                    </div>
                 </div>
             </div>
-
-            <!-- Projet 1 -->
-            <div class="project-card">
-                <h3>SAÉ : Plateforme de gestion de buvette associative</h3>
-                <p><strong>Contexte :</strong> Projet mené à l'IUT de Montreuil (Déc. 2025 - Janv. 2026).</p>
-                <p><strong>Réalisations :</strong> Création en équipe d'une plateforme web en PHP/HTML/CSS permettant la gestion d'une buvette en ligne avec un client, un barman et un gestionnaire.</p>
-                <div class="project-tags">
-                    <span class="tag" style="background-color: var(--secondary-color); color: white;">Comp. 2 : Conduire un projet (Besoins utilisateurs)</span>
-                    <span class="tag" style="background-color: var(--secondary-color); color: white;">Comp. 3 : Aptitudes pour travailler en équipe</span>
-                </div>
-            </div>
-
-            <!-- Projet 2 -->
-            <div class="project-card">
-                <h3>SAÉ : Jeu Terraria-like</h3>
-                <p><strong>Contexte :</strong> Projet de développement mené de mai à juin 2025 à l'IUT.</p>
-                <p><strong>Réalisations :</strong> Création en équipe d'un jeu vidéo en Java en s'inspirant du célèbre jeu Terraria. Mobilisation de compétences en programmation orientée objet.</p>
-                <div class="project-tags">
-                    <span class="tag" style="background-color: var(--secondary-color); color: white;">Comp. 2 : Conception de projet</span>
-                    <span class="tag" style="background-color: var(--secondary-color); color: white;">Comp. 3 : Intégrer une équipe</span>
-                </div>
-            </div>
-            
-            <!-- Projet 3 -->
-            <div class="project-card">
-                <h3>SAÉ : Création d'une base de données</h3>
-                <p><strong>Contexte :</strong> Projet réalisé entre décembre 2024 et janvier 2025.</p>
-                <p><strong>Réalisations :</strong> Création en équipe d'une base de données sur des jouets en SQL, incluant le développement de requêtes SQL pour interroger et manipuler les données.</p>
-                <div class="project-tags">
-                    <span class="tag" style="background-color: var(--secondary-color); color: white;">Comp. 1 : Concevoir une BDD</span>
-                    <span class="tag" style="background-color: var(--secondary-color); color: white;">Comp. 1 : Interroger une BDD relationnelle</span>
-                </div>
-            </div>
-
-        </div>
+        </section>
     </main>
 
     <footer>
-        <p>© 2026 - Portfolio B.U.T. Informatique Parcours C - Fait par Baptiste Durand-Keohavong.</p>
+        <p>Portfolio de Baptiste Durand-Keohavong - Démarche réflexive et distancée du BUT Informatique.</p>
     </footer>
 
 </body>
