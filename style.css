@@ -248,27 +248,6 @@ section.view.active { display: block; }
 .project-proof { margin-top: 18px; font-size: 14px; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 16px; }
 .project-proof strong { color: var(--ink); font-weight: 600; }
 
-/* Matrice */
-.matrix-section {
-  margin-top: 40px;
-  background: var(--paper-raised);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 28px;
-  box-shadow: var(--card-shadow);
-}
-.matrix-heading { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; margin: 0 0 6px; }
-.matrix-sub { color: var(--ink-soft); font-size: 14.5px; margin: 0 0 22px; }
-.matrix-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; }
-table.matrix { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 640px; background: var(--paper-raised); }
-table.matrix th, table.matrix td { border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); padding: 12px 14px; text-align: left; }
-table.matrix th:last-child, table.matrix td:last-child { border-right: none; }
-table.matrix thead th { background: var(--paper); font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 12px; color: var(--ink-soft); }
-table.matrix tbody th { font-weight: 500; background: var(--paper); white-space: nowrap; font-size: 13.5px; }
-table.matrix td { text-align: center; }
-.mark { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--brass); }
-.mark.empty { background: none; }
-
 .maquette-note {
   margin-top: 40px;
   padding: 20px 24px;
