@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
- 
+
 <header class="top">
   <div class="wrap">
     <div class="top-row">
@@ -27,14 +27,11 @@
     </div>
     <p class="intro">
       Étudiant en troisième année de BUT Informatique, en recherche d'une alternance à partir de septembre.
-      Ce portfolio propose une <strong>double lecture</strong> de mon parcours : par <strong>compétences</strong> —
-      ce que chaque compétence recouvre et quels projets en apportent la preuve — et par <strong>projets</strong> —
-      ce que chaque projet ou expérience a mobilisé comme compétences. Une matrice de synthèse croise les deux
-      en bas de page.
+      Ce portfolio propose une <strong>double lecture</strong> de mon parcours : par <strong>compétences</strong> et par <strong>projets</strong>.
     </p>
   </div>
 </header>
- 
+
 <section class="formation-section">
   <div class="wrap">
     <p class="formation-heading">Formation</p>
@@ -62,7 +59,7 @@
     </div>
   </div>
 </section>
- 
+
 <nav class="view-toggle">
   <div class="wrap">
     <div class="toggle-row" role="tablist" aria-label="Mode de lecture du portfolio">
@@ -71,42 +68,36 @@
     </div>
   </div>
 </nav>
- 
+
 <main class="wrap">
- 
-  <!-- ================= VUE PAR COMPETENCE ================= -->
+
+  <!-- VUE PAR COMPETENCE -->
   <section class="view active" id="view-comp" role="tabpanel" aria-labelledby="tab-comp">
     <div id="comp-list"></div>
   </section>
- 
-  <!-- ================= VUE PAR PROJET ================= -->
+
+  <!-- VUE PAR PROJET -->
   <section class="view" id="view-proj" role="tabpanel" aria-labelledby="tab-proj">
     <div class="project-grid" id="proj-list"></div>
   </section>
 
-   <!-- ================= MATRICE ================= -->
-  
+  <!-- MATRICE DE SYNTHÈSE -->
+  <div id="matrix-container"></div>
 
- 
   <div class="maquette-note">
-    <strong>À compléter —</strong> tu peux enrichir chaque fiche projet avec des captures d'écran, et ajouter
-    une section compétences techniques (Java, Python, PHP, SQL, PostgreSQL, VBA…) ou langues si tu veux que le
-    portfolio reprenne l'intégralité du CV.
+    <strong>À compléter —</strong> Tu peux enrichir chaque fiche projet avec des captures d'écran, et ajouter une section compétences techniques (Java, Python, PHP, SQL, PostgreSQL, VBA…) ou langues.
   </div>
- 
+
 </main>
- 
+
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-    <span>Baptiste Durand-Keohavong . BUT Informatique, IUT de Montreuil · Montreuil (93100) </span>
-    <span></span>
+    <span>Baptiste Durand-Keohavong · BUT Informatique, IUT de Montreuil · Montreuil (93100)</span>
   </div>
 </footer>
- 
+
 <script>
 (function(){
- 
-  // ---------------- DATA ----------------
   const COMPETENCES = [
     {
       id: 'C1',
@@ -132,14 +123,14 @@
       id: 'C3',
       title: "Collaborer au sein d'une équipe informatique",
       proofs: [
-        { text: "Intégration au sein d'une équipe marketing chez TotalEnergies, en dehors du seul cadre informatique", proj: 'p1' },
+        { text: "Intégration au sein d'une équipe marketing chez TotalEnergies", proj: 'p1' },
         { text: "Développement en trinôme de la plateforme de gestion de buvette", proj: 'p2' },
         { text: "Répartition des rôles et coordination pour la réalisation d'un jeu vidéo en équipe", proj: 'p3' },
         { text: "Travail d'équipe sur la conception d'un site web dédié aux Jeux Olympiques 2028", proj: 'p4' }
       ]
     }
   ];
- 
+
   const PROJECTS = [
     {
       id: 'p1',
@@ -155,7 +146,7 @@
       code: 'SAÉ Web',
       period: '12/2025 – 01/2026',
       title: "Plateforme de gestion de buvette associative",
-      desc: "Création en équipe (avec Gabin et Romain) d'une plateforme web en PHP/HTML/CSS permettant la gestion d'une buvette en ligne avec trois profils : un client, un barman et un gestionnaire.",
+      desc: "Création en équipe (avec Gabin et Romain) d'une plateforme web en PHP/HTML/CSS permettant la gestion d'une buvette en ligne avec trois profils : client, barman et gestionnaire.",
       comps: ['C1','C2','C3'],
       proof: '<a href="https://github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-</a>'
     },
@@ -178,11 +169,10 @@
       proof: '<a href="https://thileepanedvin.github.io/Site-JO28/billet.html" target="_blank" rel="noopener">thileepanedvin.github.io/Site-JO28/billet.html</a>'
     }
   ];
- 
+
   const compById = Object.fromEntries(COMPETENCES.map(c => [c.id, c]));
   const projById = Object.fromEntries(PROJECTS.map(p => [p.id, p]));
- 
-  // ---------------- RENDER: par compétence ----------------
+
   const compList = document.getElementById('comp-list');
   COMPETENCES.forEach(c => {
     const block = document.createElement('div');
@@ -206,8 +196,7 @@
     `;
     compList.appendChild(block);
   });
- 
-  // ---------------- RENDER: par projet ----------------
+
   const projList = document.getElementById('proj-list');
   PROJECTS.forEach(p => {
     const card = document.createElement('div');
@@ -227,16 +216,43 @@
     `;
     projList.appendChild(card);
   });
- 
-  // ---------------- RENDER: matrix ----------------
 
- 
-  // ---------------- Tabs ----------------
+  const matrixContainer = document.getElementById('matrix-container');
+  if(matrixContainer){
+    matrixContainer.innerHTML = `
+      <div class="matrix-section">
+        <h2 class="matrix-heading">Matrice de synthèse</h2>
+        <p class="matrix-sub">Croisement entre les compétences B.U.T. et les projets réalisés.</p>
+        <div class="matrix-scroll">
+          <table class="matrix">
+            <thead>
+              <tr>
+                <th>Compétence / Projet</th>
+                ${PROJECTS.map(p => `<th>${p.code}<br><small style="font-weight:normal;">${p.title.substring(0,25)}...</small></th>`).join('')}
+              </tr>
+            </thead>
+            <tbody>
+              ${COMPETENCES.map(c => `
+                <tr>
+                  <th>${c.id} — ${c.title}</th>
+                  ${PROJECTS.map(p => {
+                    const active = p.comps.includes(c.id);
+                    return `<td><span class="mark ${active ? '' : 'empty'}"></span></td>`;
+                  }).join('')}
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+  }
+
   const tabComp = document.getElementById('tab-comp');
   const tabProj = document.getElementById('tab-proj');
   const viewComp = document.getElementById('view-comp');
   const viewProj = document.getElementById('view-proj');
- 
+
   function showView(which){
     const compActive = which === 'comp';
     tabComp.setAttribute('aria-selected', compActive ? 'true' : 'false');
@@ -244,10 +260,10 @@
     viewComp.classList.toggle('active', compActive);
     viewProj.classList.toggle('active', !compActive);
   }
+
   tabComp.addEventListener('click', () => showView('comp'));
   tabProj.addEventListener('click', () => showView('proj'));
- 
-  // jump from a competency's proof link to the project card, switching view
+
   document.addEventListener('click', (e) => {
     const el = e.target.closest('[data-jump]');
     if(!el) return;
@@ -258,9 +274,9 @@
       if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
- 
+
 })();
 </script>
- 
+
 </body>
 </html>
