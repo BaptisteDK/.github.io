@@ -111,37 +111,7 @@
     {
       id: 'C1',
       title: "Gérer des données de l'information",
-      levels: [
-        {
-          n: 'Niveau 1',
-          label: "Concevoir et mettre en place une base de données à partir d'un cahier des charges client",
-          items: [
-            "Mettre à jour et interroger une base de données relationnelle",
-            "Concevoir une base de données relationnelle à partir d'un cahier des charges"
-          ]
-        },
-        {
-          n: 'Niveau 2',
-          label: "Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité",
-          items: [
-            "Optimiser les modèles de données de l'entreprise",
-            "Assurer la confidentialité, l'intégrité et la sécurité des données",
-            "Visualiser des données",
-            "Organiser la restitution des données par la programmation et la visualisation",
-            "Manipuler des données hétérogènes"
-          ]
-        },
-        {
-          n: 'Niveau 3',
-          label: "Administrer une base de données, concevoir et réaliser des systèmes d'informations décisionnels",
-          items: [
-            "Capturer et stocker des ensembles volumineux et complexes de données hétérogènes",
-            "Préparer et extraire les données pour l'exploitation",
-            "Appliquer des méthodes d'exploration et d'exploitation des données",
-            "Mettre en production et optimiser le système de gestion de données de l'entreprise"
-          ]
-        }
-      ],
+     
       proofs: [
         { text: "Mise à jour et interrogation de la base de données clients", proj: 'p1' },
         { text: "Automatisation de flux de données avec des scripts VBA sous Excel", proj: 'p1' },
@@ -279,7 +249,17 @@
   COMPETENCES.forEach(c => {
     const block = document.createElement('div');
     block.className = 'comp-block';
-
+    const levelsHTML = c.levels.map(l => `
+      <div class="level">
+        <div class="level-tag mono">${l.n}</div>
+        <div>
+          <div class="level-label">${l.label}</div>
+          <ul class="level-items">
+            ${l.items.map(it => `<li>${it}</li>`).join('')}
+          </ul>
+        </div>
+      </div>
+    `).join('');
     const proofsHTML = c.proofs.map(pr => {
       const proj = projById[pr.proj];
       return `<div class="proof-item">
@@ -287,19 +267,19 @@
         <span>${pr.text} — <a href="#${proj.id}" data-jump="${proj.id}">${proj.code} · ${proj.title}</a></span>
       </div>`;
     }).join('');
-
     block.innerHTML = `
       <div class="comp-head">
         <span class="comp-code">${c.id}</span>
         <h2 class="comp-title">${c.title}</h2>
       </div>
+      <div class="comp-levels">${levelsHTML}</div>
       <div class="proof-box">
         <p class="proof-label mono">PREUVES — PROJETS MOBILISÉS</p>
         <div class="proof-list">${proofsHTML}</div>
       </div>
     `;
     compList.appendChild(block);
-  });
+  }); 
  
   // ---------------- RENDER: par projet ----------------
   const projList = document.getElementById('proj-list');
