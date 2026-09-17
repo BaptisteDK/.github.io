@@ -85,13 +85,7 @@
   </section>
 
    <!-- ================= MATRICE ================= -->
-  <div class="matrix-section">
-    <h2 class="matrix-heading">Tableau croisé compétences × projets</h2>
-    <p class="matrix-sub">Vue de synthèse : quel projet mobilise quelle compétence, en un coup d'œil.</p>
-    <div class="matrix-scroll">
-      <table class="matrix" id="matrix-table"></table>
-    </div>
-  </div>
+  
 
  
   <div class="maquette-note">
@@ -342,21 +336,7 @@
   });
  
   // ---------------- RENDER: matrix ----------------
-  const table = document.getElementById('matrix-table');
-  const thead = document.createElement('thead');
-  thead.innerHTML = `<tr><th>Projet \\ Compétence</th>${COMPETENCES.map(c => `<th>${c.id}</th>`).join('')}</tr>`;
-  const tbody = document.createElement('tbody');
-  PROJECTS.forEach(p => {
-    const cells = COMPETENCES.map(c => {
-      const has = p.comps.includes(c.id);
-      return `<td>${has ? '<span class="mark" title="'+c.id+' mobilisée"></span>' : '<span class="mark empty"></span>'}</td>`;
-    }).join('');
-    const row = document.createElement('tr');
-    row.innerHTML = `<th>${p.code}</th>${cells}`;
-    tbody.appendChild(row);
-  });
-  table.appendChild(thead);
-  table.appendChild(tbody);
+
  
   // ---------------- Tabs ----------------
   const tabComp = document.getElementById('tab-comp');
