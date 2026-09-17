@@ -3,213 +3,362 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Baptiste Durand-Keohavong — Portfolio BUT Informatique</title>
+<title>Portfolio — BUT Informatique</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
  
-<div class="app">
- 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="sidebar-top">
+<header class="top">
+  <div class="wrap">
+    <div class="top-row">
       <div>
-        <div class="brand">Baptiste<br>Durand-Keohavong</div>
-        <div class="brand-sub">portfolio.but-info</div>
+        <p class="eyebrow">PORTFOLIO — B.U.T. INFORMATIQUE · 3E ANNÉE · PARCOURS C</p>
+        <h1 class="name">Baptiste Durand-Keohavong</h1>
+        <p class="role">Étudiant en BUT Informatique — IUT de Montreuil, Université Paris 8 · en recherche d'alternance à partir de septembre</p>
       </div>
-      <p class="tree-label">Navigation</p>
-      <nav class="tree">
-        <a href="#profil" class="active">profil<span class="ext"></span></a>
-        <a href="#experience">experience<span class="ext"></span></a>
-        <a href="#formation">formation<span class="ext"></span></a>
-        <a href="#projets">projets<span class="ext"></span></a>
-        <a href="#competences">competences<span class="ext"></span></a>
-        <a href="#contact">contact<span class="ext"></span></a>
-      </nav>
+      <div class="header-meta">
+        <div><a href="mailto:bapt.dukeo@gmail.com">bapt.dukeo@gmail.com</a></div>
+        <div>Montreuil (93100)</div>
+        <div><a href="https://github.com/DUT-Info-Montreuil" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil</a></div>
+      </div>
     </div>
-  </aside>
+    <p class="intro">
+      Étudiant en troisième année de BUT Informatique, en recherche d'une alternance à partir de septembre.
+      Ce portfolio propose une <strong>double lecture</strong> de mon parcours : par <strong>compétences</strong> —
+      ce que chaque compétence recouvre et quels projets en apportent la preuve — et par <strong>projets</strong> —
+      ce que chaque projet ou expérience a mobilisé comme compétences. Une matrice de synthèse croise les deux
+      en bas de page.
+    </p>
+  </div>
+</header>
  
-  <!-- MAIN -->
-  <main>
+<nav class="view-toggle">
+  <div class="wrap">
+    <div class="toggle-row" role="tablist" aria-label="Mode de lecture du portfolio">
+      <button class="tab-btn" role="tab" aria-selected="true" id="tab-comp" aria-controls="view-comp">Par compétence</button>
+      <button class="tab-btn" role="tab" aria-selected="false" id="tab-proj" aria-controls="view-proj">Par projet</button>
+    </div>
+  </div>
+</nav>
  
-    <!-- HERO / PROFIL -->
-    <section id="profil" class="hero">
-      <h1>Baptiste Durand-Keohavong</h1>
-      <p class="role">Étudiant en <em>BUT Informatique</em>, IUT de Montreuil</p>
+<main class="wrap">
  
-      <div class="contact-row">
-        <a href="mailto:bapt.dukeo@gmail.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
-          bapt.dukeo@gmail.com
-        </a>
-        <a href="#">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          Montreuil (93100)
-        </a>
-      </div>
+  <!-- ================= VUE PAR COMPETENCE ================= -->
+  <section class="view active" id="view-comp" role="tabpanel" aria-labelledby="tab-comp">
+    <div id="comp-list"></div>
+  </section>
  
-      <p class="lede">
-        Étudiant en troisième année de BUT Informatique, je recherche une alternance à partir de septembre 2026.
-        Je souhaite valider mon diplôme en mettant mes compétences techniques au service de projets concrets,
-        du traitement de données à de la programmation.
-      </p>
-    </section>
+  <!-- ================= VUE PAR PROJET ================= -->
+  <section class="view" id="view-proj" role="tabpanel" aria-labelledby="tab-proj">
+    <div class="project-grid" id="proj-list"></div>
+  </section>
  
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="section-head">
-        <h2>Expérience</h2>
-      </div>
+  <!-- ================= MATRICE ================= -->
+  <div class="matrix-section">
+    <h2 class="matrix-heading">Tableau croisé compétences × projets</h2>
+    <p class="matrix-sub">Vue de synthèse : quel projet mobilise quelle compétence, en un coup d'œil.</p>
+    <div class="matrix-scroll">
+      <table class="matrix" id="matrix-table"></table>
+    </div>
+  </div>
  
-      <div class="entry">
-        <div class="when">
-          <span>04/2026 → 07/2026</span>
-          <span class="where">Nanterre, France</span>
-        </div>
+  <div class="maquette-note">
+    <strong>À compléter —</strong> tu peux enrichir chaque fiche projet avec des captures d'écran, et ajouter
+    une section compétences techniques (Java, Python, PHP, SQL, PostgreSQL, VBA…) ou langues si tu veux que le
+    portfolio reprenne l'intégralité du CV.
+  </div>
+ 
+</main>
+ 
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+    <span>IUT de Montreuil — Département informatique</span>
+    <span>Portfolio — Semestre 6</span>
+  </div>
+</footer>
+ 
+<script>
+(function(){
+ 
+  // ---------------- DATA ----------------
+  const COMPETENCES = [
+    {
+      id: 'C1',
+      title: "Gérer des données de l'information",
+      levels: [
+        {
+          n: 'Niveau 1',
+          label: "Concevoir et mettre en place une base de données à partir d'un cahier des charges client",
+          items: [
+            "Mettre à jour et interroger une base de données relationnelle",
+            "Concevoir une base de données relationnelle à partir d'un cahier des charges"
+          ]
+        },
+        {
+          n: 'Niveau 2',
+          label: "Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité",
+          items: [
+            "Optimiser les modèles de données de l'entreprise",
+            "Assurer la confidentialité, l'intégrité et la sécurité des données",
+            "Visualiser des données",
+            "Organiser la restitution des données par la programmation et la visualisation",
+            "Manipuler des données hétérogènes"
+          ]
+        },
+        {
+          n: 'Niveau 3',
+          label: "Administrer une base de données, concevoir et réaliser des systèmes d'informations décisionnels",
+          items: [
+            "Capturer et stocker des ensembles volumineux et complexes de données hétérogènes",
+            "Préparer et extraire les données pour l'exploitation",
+            "Appliquer des méthodes d'exploration et d'exploitation des données",
+            "Mettre en production et optimiser le système de gestion de données de l'entreprise"
+          ]
+        }
+      ],
+      proofs: [
+        { text: "Mise à jour et interrogation de la base de données clients", proj: 'p1' },
+        { text: "Automatisation de flux de données avec des scripts VBA sous Excel", proj: 'p1' },
+        { text: "Création d'outils de reporting et d'un tableau de bord d'analyse", proj: 'p1' },
+        { text: "Conception de la base de données de la plateforme de gestion de buvette", proj: 'p2' }
+      ]
+    },
+    {
+      id: 'C2',
+      title: "Conduire un projet",
+      levels: [
+        {
+          n: 'Niveau 1',
+          label: "Identifier les besoins métiers des clients et des utilisateurs",
+          items: [
+            "Appréhender les besoins du client et de l'utilisateur",
+            "Formaliser les besoins du client et de l'utilisateur",
+            "Identifier les critères de faisabilité d'un projet informatique"
+          ]
+        },
+        {
+          n: 'Niveau 2',
+          label: "Appliquer une démarche de suivi de projet selon les besoins métiers",
+          items: [
+            "Identifier les processus d'une organisation pour améliorer les systèmes d'information",
+            "Mettre en place les outils de gestion de projet",
+            "Identifier les acteurs et les différentes phases d'un cycle de développement",
+            "Définir et mettre en œuvre une démarche de suivi de projet"
+          ]
+        },
+        {
+          n: 'Niveau 3',
+          label: "Participer à la conception et à la mise en œuvre d'un projet système d'information",
+          items: [
+            "Mesurer les impacts économiques, sociétaux et technologiques d'un projet informatique",
+            "Intégrer un projet informatique dans le système d'information d'une organisation",
+            "Adapter un système d'information"
+          ]
+        }
+      ],
+      proofs: [
+        { text: "Identification des besoins de trois profils utilisateurs (client, barman, gestionnaire)", proj: 'p2' },
+        { text: "Organisation du développement en équipe d'un jeu vidéo, de la conception au livrable", proj: 'p3' },
+        { text: "Développement en équipe d'un site web complet, de la structure à la page de billetterie", proj: 'p4' },
+        { text: "Découverte des processus internes d'une entreprise et de ses outils de gestion", proj: 'p1' }
+      ]
+    },
+    {
+      id: 'C3',
+      title: "Collaborer au sein d'une équipe informatique",
+      levels: [
+        {
+          n: 'Niveau 1',
+          label: "Situer son rôle et ses missions au sein d'une équipe informatique",
+          items: [
+            "Appréhender l'écosystème numérique",
+            "Comprendre la diversité et la structure de l'informatique dans une organisation",
+            "Découvrir les aptitudes requises selon les secteurs informatiques"
+          ]
+        },
+        {
+          n: 'Niveau 2',
+          label: "Appliquer une démarche pour intégrer une équipe informatique",
+          items: [
+            "Identifier les statuts, fonctions et rôles dans une équipe pluridisciplinaire",
+            "Mobiliser les compétences interpersonnelles nécessaires",
+            "Acquérir les compétences interpersonnelles pour travailler en équipe",
+            "Rendre compte de son activité professionnelle"
+          ]
+        },
+        {
+          n: 'Niveau 3',
+          label: "Manager une équipe informatique",
+          items: [
+            "Organiser et partager une veille numérique",
+            "Identifier les enjeux de l'économie de l'innovation numérique",
+            "Guider la conduite du changement informatique dans une organisation",
+            "Accompagner le management de projet informatique"
+          ]
+        }
+      ],
+      proofs: [
+        { text: "Intégration au sein d'une équipe marketing chez TotalEnergies, en dehors du seul cadre informatique", proj: 'p1' },
+        { text: "Développement en trinôme de la plateforme de gestion de buvette", proj: 'p2' },
+        { text: "Répartition des rôles et coordination pour la réalisation d'un jeu vidéo en équipe", proj: 'p3' },
+        { text: "Travail d'équipe sur la conception d'un site web dédié aux Jeux Olympiques 2028", proj: 'p4' }
+      ]
+    }
+  ];
+ 
+  const PROJECTS = [
+    {
+      id: 'p1',
+      code: 'Expérience pro',
+      period: '04/2026 – 07/2026',
+      title: "Assistant coordinateur vente — TotalEnergies Marketing France",
+      desc: "Mise à jour et interrogation de la base de données clients, création de scripts VBA sous Excel pour automatiser des flux, et conception d'outils de reporting et d'analyse (dashboard), au sein d'une équipe marketing à Nanterre.",
+      comps: ['C1','C2','C3'],
+      proof: "Poste occupé du 04/2026 au 07/2026 chez TotalEnergies Marketing France, Nanterre."
+    },
+    {
+      id: 'p2',
+      code: 'SAÉ Web',
+      period: '12/2025 – 01/2026',
+      title: "Plateforme de gestion de buvette associative",
+      desc: "Création en équipe (avec Gabin et Romain) d'une plateforme web en PHP/HTML/CSS permettant la gestion d'une buvette en ligne avec trois profils : un client, un barman et un gestionnaire.",
+      comps: ['C1','C2','C3'],
+      proof: '<a href="https://github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-</a>'
+    },
+    {
+      id: 'p3',
+      code: 'SAÉ Dev',
+      period: '05/2025 – 06/2025',
+      title: "Jeu Terraria-like",
+      desc: "Création en équipe d'un jeu en Java s'inspirant de Terraria : conception du gameplay, répartition des rôles et coordination du développement.",
+      comps: ['C2','C3'],
+      proof: '<a href="https://github.com/DUT-Info-Montreuil/sae_dev_gbf" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/sae_dev_gbf</a>'
+    },
+    {
+      id: 'p4',
+      code: 'SAÉ Web',
+      period: '12/2024 – 01/2025',
+      title: "Site web des Jeux Olympiques de Paris 2028",
+      desc: "Création en équipe d'un site web en HTML/CSS dédié aux Jeux Olympiques de 2028, incluant notamment une page de billetterie.",
+      comps: ['C2','C3'],
+      proof: '<a href="https://thileepanedvin.github.io/Site-JO28/billet.html" target="_blank" rel="noopener">thileepanedvin.github.io/Site-JO28/billet.html</a>'
+    }
+  ];
+ 
+  const compById = Object.fromEntries(COMPETENCES.map(c => [c.id, c]));
+  const projById = Object.fromEntries(PROJECTS.map(p => [p.id, p]));
+ 
+  // ---------------- RENDER: par compétence ----------------
+  const compList = document.getElementById('comp-list');
+  COMPETENCES.forEach(c => {
+    const block = document.createElement('div');
+    block.className = 'comp-block';
+ 
+    const levelsHTML = c.levels.map(l => `
+      <div class="level">
+        <div class="level-tag mono">${l.n}</div>
         <div>
-          <h3>Assistant coordinateur vente</h3>
-          <div class="org">TotalEnergies Marketing France</div>
-          <ul>
-            <li>Mise à jour de la base de données clients</li>
-            <li>Création de scripts VBA avec Excel pour automatiser des flux</li>
-            <li>Création d'outils de reporting et d'analyse (dashboard)</li>
+          <div class="level-label">${l.label}</div>
+          <ul class="level-items">
+            ${l.items.map(it => `<li>${it}</li>`).join('')}
           </ul>
         </div>
       </div>
-    </section>
+    `).join('');
  
-    <!-- FORMATION -->
-    <section id="formation">
-      <div class="section-head">
-        <h2>Formation</h2>
+    const proofsHTML = c.proofs.map(pr => {
+      const proj = projById[pr.proj];
+      return `<div class="proof-item">
+        <span class="dot"></span>
+        <span>${pr.text} — <a href="#${proj.id}" data-jump="${proj.id}">${proj.code} · ${proj.title}</a></span>
+      </div>`;
+    }).join('');
+ 
+    block.innerHTML = `
+      <div class="comp-head">
+        <span class="comp-code">${c.id}</span>
+        <h2 class="comp-title">${c.title}</h2>
       </div>
- 
-      <div class="entry">
-        <div class="when">
-          <span>2024 → 2027</span>
-          <span class="where">Montreuil, France</span>
-        </div>
-        <div>
-          <h3>BUT Informatique</h3>
-          <div class="org">IUT de Montreuil, Université Paris 8 — actuellement en 3ᵉ année</div>
-        </div>
+      <div class="comp-levels">${levelsHTML}</div>
+      <div class="proof-box">
+        <p class="proof-label mono">PREUVES — PROJETS MOBILISÉS</p>
+        <div class="proof-list">${proofsHTML}</div>
       </div>
+    `;
+    compList.appendChild(block);
+  });
  
-      <div class="entry">
-        <div class="when">
-          <span>2021 → 2024</span>
-          <span class="where">Montreuil, France</span>
-        </div>
-        <div>
-          <h3>Baccalauréat général</h3>
-          <div class="org">Lycée Condorcet — spécialités Mathématiques, NSI</div>
-        </div>
+  // ---------------- RENDER: par projet ----------------
+  const projList = document.getElementById('proj-list');
+  PROJECTS.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'project-card';
+    card.id = p.id;
+    card.innerHTML = `
+      <div class="project-top">
+        <span class="project-code mono">${p.code}</span>
+        <span class="project-period mono">${p.period}</span>
       </div>
-    </section>
- 
-    <!-- PROJETS -->
-    <section id="projets">
-      <div class="section-head">
-        <h2>Projets informatiques</h2>
+      <h3 class="project-title">${p.title}</h3>
+      <p class="project-desc">${p.desc}</p>
+      <div class="project-comps">
+        ${p.comps.map(id => `<span class="comp-pill">${id} — ${compById[id].title}</span>`).join('')}
       </div>
+      <div class="project-proof"><strong>Preuve —</strong> ${p.proof}</div>
+    `;
+    projList.appendChild(card);
+  });
  
-      <div class="projects">
+  // ---------------- RENDER: matrix ----------------
+  const table = document.getElementById('matrix-table');
+  const thead = document.createElement('thead');
+  thead.innerHTML = `<tr><th>Projet \\ Compétence</th>${COMPETENCES.map(c => `<th>${c.id}</th>`).join('')}</tr>`;
+  const tbody = document.createElement('tbody');
+  PROJECTS.forEach(p => {
+    const cells = COMPETENCES.map(c => {
+      const has = p.comps.includes(c.id);
+      return `<td>${has ? '<span class="mark" title="'+c.id+' mobilisée"></span>' : '<span class="mark empty"></span>'}</td>`;
+    }).join('');
+    const row = document.createElement('tr');
+    row.innerHTML = `<th>${p.code}</th>${cells}`;
+    tbody.appendChild(row);
+  });
+  table.appendChild(thead);
+  table.appendChild(tbody);
  
-        <div class="project">
-          <div class="p-title">Plateforme de gestion de buvette associative</div>
-          <div class="p-when">12/2025 → 01/2026 · IUT de Montreuil</div>
-          <p>Création en équipe d'une plateforme web permettant la gestion d'une buvette en ligne, avec un espace client, un barman et un gestionnaire.</p>
-          <div class="stack">
-            <span class="chip">PHP</span><span class="chip">HTML</span><span class="chip">CSS</span>
-          </div>
-          <a class="link" href="https://github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-" target="_blank" rel="noopener">
-            github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain- ↗
-          </a>
-        </div>
+  // ---------------- Tabs ----------------
+  const tabComp = document.getElementById('tab-comp');
+  const tabProj = document.getElementById('tab-proj');
+  const viewComp = document.getElementById('view-comp');
+  const viewProj = document.getElementById('view-proj');
  
-        <div class="project">
-          <div class="p-title">Jeu Terraria-like</div>
-          <div class="p-when">05/2025 → 06/2025 · IUT de Montreuil</div>
-          <p>Création en équipe d'un jeu en Java s'inspirant du jeu Terraria.</p>
-          <div class="stack">
-            <span class="chip">Java</span>
-          </div>
-          <a class="link" href="https://github.com/DUT-Info-Montreuil/sae_dev_gbf" target="_blank" rel="noopener">
-            github.com/DUT-Info-Montreuil/sae_dev_gbf ↗
-          </a>
-        </div>
+  function showView(which){
+    const compActive = which === 'comp';
+    tabComp.setAttribute('aria-selected', compActive ? 'true' : 'false');
+    tabProj.setAttribute('aria-selected', compActive ? 'false' : 'true');
+    viewComp.classList.toggle('active', compActive);
+    viewProj.classList.toggle('active', !compActive);
+  }
+  tabComp.addEventListener('click', () => showView('comp'));
+  tabProj.addEventListener('click', () => showView('proj'));
  
-        <div class="project">
-          <div class="p-title">Création d'une base de données</div>
-          <div class="p-when">12/2024 → 01/2025 · IUT de Montreuil</div>
-          <p>Création en équipe d'une base de données sur des jouets, avec développement de requêtes SQL.</p>
-          <div class="stack">
-            <span class="chip">SQL</span>
-          </div>
-        </div>
+  // jump from a competency's proof link to the project card, switching view
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-jump]');
+    if(!el) return;
+    e.preventDefault();
+    showView('proj');
+    requestAnimationFrame(() => {
+      const target = document.getElementById(el.dataset.jump);
+      if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
  
-      </div>
-    </section>
- 
-    <!-- COMPETENCES -->
-    <section id="competences">
-      <div class="section-head">
-        <h2>Compétences</h2>
-      </div>
- 
-      <div class="grid-3">
-        <div class="skill-block">
-          <h4>Langages & outils</h4>
-          <div class="pill-row">
-            <span class="pill">Java</span>
-            <span class="pill">Python</span>
-            <span class="pill">C</span>
-            <span class="pill">HTML</span>
-            <span class="pill">CSS</span>
-            <span class="pill">PHP</span>
-            <span class="pill">SQL</span>
-            <span class="pill">PostgreSQL</span>
-            <span class="pill">VBA</span>
-            <span class="pill">Excel</span>
-            <span class="pill">SAP</span>
-          </div>
-        </div>
- 
-        <div class="skill-block">
-          <h4>Langues</h4>
-          <div class="lang-row">
-            <div class="lang"><span>Anglais</span><span class="level">B2</span></div>
-            <div class="lang"><span>Allemand</span><span class="level">B1</span></div>
-          </div>
-        </div>
- 
-        <div class="skill-block">
-          <h4>Centres d'intérêt</h4>
-          <ul class="interests">
-            <li>Sports de combat</li>
-            <li>Jeux vidéo</li>
-            <li>Nouvelles technologies</li>
-          </ul>
-        </div>
-      </div>
-    </section>
- 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="cta">
-        <h2>À la recherche d'une alternance à partir de septembre 2026.</h2>
-        <a class="btn" href="mailto:bapt.dukeo@gmail.com">écrire un email →</a>
-      </div>
-      <footer>
-        Baptiste Durand-Keohavong — BUT Informatique, IUT de Montreuil · Montreuil (93100)
-      </footer>
-    </section>
- 
-  </main>
-</div>
+})();
+</script>
  
 </body>
 </html>
