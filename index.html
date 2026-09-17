@@ -1,104 +1,230 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Baptiste Durand-Keohavong</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baptiste Durand-Keohavong — Portfolio BUT Informatique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header>
-        <h1>Baptiste Durand-Keohavong</h1>
-        <p>Étudiant en BUT Informatique - 3ème Année (Parcours C)</p>
-        <p>IUT de Montreuil - Recherche d'alternance</p>
-    </header>
-
-    <nav>
-        <a href="#competences">Lecture par Compétences</a>
-        <a href="#projets">Lecture par Projets</a>
-    </nav>
-
-    <main>
-        <!-- DOUBLE LECTURE : PARTIE 1 - PAR COMPÉTENCES -->
-        <section id="competences">
-            <h2>Lecture par les Compétences</h2>
-            
-            <div class="card-container">
-                <div class="card">
-                    <h3>Compétence 1 : Gérer des données de l'information</h3>
-                    <p>Concevoir, mettre en place, optimiser et administrer une base de données, et visualiser des données hétérogènes.</p>
-                    <strong>Projets mobilisant cette compétence :</strong>
-                    <div class="tags">
-                        <span class="tag tag-project">Projet : Base de données Jouets (SQL)</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Compétence 2 : Conduire un projet</h3>
-                    <p>Identifier les besoins clients, mettre en place des outils de suivi, formaliser et participer à la mise en œuvre d'un projet informatique.</p>
-                    <strong>Projets mobilisant cette compétence :</strong>
-                    <div class="tags">
-                        <span class="tag tag-project">Plateforme de Buvette (PHP/Web)</span>
-                        <span class="tag tag-project">Jeu Terraria-like (Java)</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Compétence 3 : Collaborer au sein d'une équipe informatique</h3>
-                    <p>Situer son rôle, appliquer une démarche d'intégration d'équipe, et acquérir des compétences interpersonnelles.</p>
-                    <strong>Projets mobilisant cette compétence :</strong>
-                    <div class="tags">
-                        <span class="tag tag-project">Tous les projets IUT (Équipe)</span>
-                        </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DOUBLE LECTURE : PARTIE 2 - PAR PROJETS -->
-        <section id="projets">
-            <h2>Lecture par les Projets</h2>
-            
-            <div class="card-container">
-                <div class="card">
-                    <h3>Plateforme de gestion de buvette associative</h3>
-                    <p>Création en équipe d'une plateforme web permettant la gestion d'une buvette en ligne avec différents rôles (client, barman, gestionnaire).</p>
-                    <strong>Compétences acquises/mobilisées :</strong>
-                    <div class="tags">
-                        <span class="tag">Compétence 2 : Conduire un projet</span>
-                        <span class="tag">Compétence 3 : Collaborer en équipe</span>
-                        <span class="tag">PHP</span>
-                        <span class="tag">HTML/CSS</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Jeu Terraria-like</h3>
-                    <p>Création en équipe d'un jeu vidéo développé en Java, s'inspirant des mécaniques du jeu Terraria.</p>
-                    <strong>Compétences acquises/mobilisées :</strong>
-                    <div class="tags">
-                        <span class="tag">Compétence 2 : Conduire un projet</span>
-                        <span class="tag">Compétence 3 : Collaborer en équipe</span>
-                        <span class="tag">Java</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Création d'une base de données de jouets</h3>
-                    <p>Conception et développement en équipe d'une base de données relationnelle sur le thème des jouets et développement de requêtes SQL.</p>
-                    <strong>Compétences acquises/mobilisées :</strong>
-                    <div class="tags">
-                        <span class="tag">Compétence 1 : Gérer des données</span>
-                        <span class="tag">SQL / PostgreSQL</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>Portfolio B.U.T. Informatique Parcours C - Fait par Baptiste Durand-Keohavong.</p>
-    </footer>
-
+ 
+<div class="app">
+ 
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div>
+        <div class="brand">Baptiste<br>Durand-Keohavong</div>
+        <div class="brand-sub">portfolio.but-info</div>
+      </div>
+      <p class="tree-label">Navigation</p>
+      <nav class="tree">
+        <a href="#profil" class="active">profil<span class="ext">.md</span></a>
+        <a href="#experience">experience<span class="ext">.log</span></a>
+        <a href="#formation">formation<span class="ext">.yml</span></a>
+        <a href="#projets">projets<span class="ext">/</span></a>
+        <a href="#competences">competences<span class="ext">.json</span></a>
+        <a href="#contact">contact<span class="ext">.sh</span></a>
+      </nav>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="status"><span class="dot"></span> disponible pour alternance — sept. 2026</div>
+      <a href="mailto:bapt.dukeo@gmail.com">bapt.dukeo@gmail.com</a>
+      <a href="tel:+33767362564">07 67 36 25 64</a>
+      <a href="#">Montreuil (93100)</a>
+    </div>
+  </aside>
+ 
+  <!-- MAIN -->
+  <main>
+ 
+    <!-- HERO / PROFIL -->
+    <section id="profil" class="hero">
+      <p class="kicker">README</p>
+      <h1>Baptiste Durand-Keohavong</h1>
+      <p class="role">Étudiant en <em>BUT Informatique</em>, IUT de Montreuil</p>
+ 
+      <div class="contact-row">
+        <a href="mailto:bapt.dukeo@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+          bapt.dukeo@gmail.com
+        </a>
+        <a href="tel:+33767362564">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 11l5 2v4a2 2 0 0 1-2 2C10.5 19 4 12.5 4 4a2 2 0 0 1 2-2z"/></svg>
+          07 67 36 25 64
+        </a>
+        <a href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Montreuil (93100)
+        </a>
+      </div>
+ 
+      <p class="lede">
+        Étudiant en troisième année de BUT Informatique, je recherche une alternance à partir de septembre 2026.
+        Je souhaite valider mon diplôme en mettant mes compétences techniques au service de projets concrets,
+        du développement web au traitement de données.
+      </p>
+    </section>
+ 
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-head">
+        <h2>Expérience</h2>
+        <span class="tag">// parcours professionnel</span>
+      </div>
+ 
+      <div class="entry">
+        <div class="when">
+          <span>04/2026 → 07/2026</span>
+          <span class="where">Nanterre, France</span>
+        </div>
+        <div>
+          <h3>Assistant coordinateur vente</h3>
+          <div class="org">TotalEnergies Marketing France</div>
+          <ul>
+            <li>Mise à jour de la base de données clients</li>
+            <li>Création de scripts VBA avec Excel pour automatiser des flux</li>
+            <li>Création d'outils de reporting et d'analyse (dashboard)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- FORMATION -->
+    <section id="formation">
+      <div class="section-head">
+        <h2>Formation</h2>
+        <span class="tag">// parcours académique</span>
+      </div>
+ 
+      <div class="entry">
+        <div class="when">
+          <span>2024 → 2027</span>
+          <span class="where">Montreuil, France</span>
+        </div>
+        <div>
+          <h3>BUT Informatique</h3>
+          <div class="org">IUT de Montreuil, Université Paris 8 — actuellement en 3ᵉ année</div>
+        </div>
+      </div>
+ 
+      <div class="entry">
+        <div class="when">
+          <span>2021 → 2024</span>
+          <span class="where">Montreuil, France</span>
+        </div>
+        <div>
+          <h3>Baccalauréat général</h3>
+          <div class="org">Lycée Condorcet — spécialités Mathématiques, NSI</div>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- PROJETS -->
+    <section id="projets">
+      <div class="section-head">
+        <h2>Projets informatiques</h2>
+        <span class="tag">// SAÉ & projets perso</span>
+      </div>
+ 
+      <div class="projects">
+ 
+        <div class="project">
+          <div class="p-title">Plateforme de gestion de buvette associative</div>
+          <div class="p-when">12/2025 → 01/2026 · IUT de Montreuil</div>
+          <p>Création en équipe d'une plateforme web permettant la gestion d'une buvette en ligne, avec un espace client, un barman et un gestionnaire.</p>
+          <div class="stack">
+            <span class="chip">PHP</span><span class="chip">HTML</span><span class="chip">CSS</span>
+          </div>
+          <a class="link" href="https://github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-" target="_blank" rel="noopener">
+            github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain- ↗
+          </a>
+        </div>
+ 
+        <div class="project">
+          <div class="p-title">Jeu Terraria-like</div>
+          <div class="p-when">05/2025 → 06/2025 · IUT de Montreuil</div>
+          <p>Création en équipe d'un jeu en Java s'inspirant du jeu Terraria.</p>
+          <div class="stack">
+            <span class="chip">Java</span>
+          </div>
+          <a class="link" href="https://github.com/DUT-Info-Montreuil/sae_dev_gbf" target="_blank" rel="noopener">
+            github.com/DUT-Info-Montreuil/sae_dev_gbf ↗
+          </a>
+        </div>
+ 
+        <div class="project">
+          <div class="p-title">Création d'une base de données</div>
+          <div class="p-when">12/2024 → 01/2025 · IUT de Montreuil</div>
+          <p>Création en équipe d'une base de données sur des jouets, avec développement de requêtes SQL.</p>
+          <div class="stack">
+            <span class="chip">SQL</span>
+          </div>
+        </div>
+ 
+      </div>
+    </section>
+ 
+    <!-- COMPETENCES -->
+    <section id="competences">
+      <div class="section-head">
+        <h2>Compétences</h2>
+        <span class="tag">// stack & langues</span>
+      </div>
+ 
+      <div class="grid-3">
+        <div class="skill-block">
+          <h4>Langages & outils</h4>
+          <div class="pill-row">
+            <span class="pill">Java</span>
+            <span class="pill">Python</span>
+            <span class="pill">C</span>
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">PHP</span>
+            <span class="pill">SQL</span>
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">VBA</span>
+            <span class="pill">Excel</span>
+            <span class="pill">SAP</span>
+          </div>
+        </div>
+ 
+        <div class="skill-block">
+          <h4>Langues</h4>
+          <div class="lang-row">
+            <div class="lang"><span>Anglais</span><span class="level">B2</span></div>
+            <div class="lang"><span>Allemand</span><span class="level">B1</span></div>
+          </div>
+        </div>
+ 
+        <div class="skill-block">
+          <h4>Centres d'intérêt</h4>
+          <ul class="interests">
+            <li>Sports de combat</li>
+            <li>Jeux vidéo</li>
+            <li>Nouvelles technologies</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="cta">
+        <h2>À la recherche d'une alternance à partir de septembre 2026.</h2>
+        <a class="btn" href="mailto:bapt.dukeo@gmail.com">écrire un email →</a>
+      </div>
+      <footer>
+        Baptiste Durand-Keohavong — BUT Informatique, IUT de Montreuil · Montreuil (93100)
+      </footer>
+    </section>
+ 
+  </main>
+</div>
+ 
 </body>
 </html>
