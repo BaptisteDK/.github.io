@@ -187,17 +187,6 @@
   COMPETENCES.forEach(c => {
     const block = document.createElement('div');
     block.className = 'comp-block';
-    const levelsHTML = c.levels.map(l => `
-      <div class="level">
-        <div class="level-tag mono">${l.n}</div>
-        <div>
-          <div class="level-label">${l.label}</div>
-          <ul class="level-items">
-            ${l.items.map(it => `<li>${it}</li>`).join('')}
-          </ul>
-        </div>
-      </div>
-    `).join('');
     const proofsHTML = c.proofs.map(pr => {
       const proj = projById[pr.proj];
       return `<div class="proof-item">
@@ -210,14 +199,13 @@
         <span class="comp-code">${c.id}</span>
         <h2 class="comp-title">${c.title}</h2>
       </div>
-      <div class="comp-levels">${levelsHTML}</div>
       <div class="proof-box">
         <p class="proof-label mono">PREUVES — PROJETS MOBILISÉS</p>
         <div class="proof-list">${proofsHTML}</div>
       </div>
     `;
     compList.appendChild(block);
-  }); 
+  });
  
   // ---------------- RENDER: par projet ----------------
   const projList = document.getElementById('proj-list');
