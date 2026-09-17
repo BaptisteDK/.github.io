@@ -81,9 +81,6 @@
     <div class="project-grid" id="proj-list"></div>
   </section>
 
-  <!-- MATRICE DE SYNTHÈSE -->
-  <div id="matrix-container"></div>
-
   <div class="maquette-note">
     <strong>À compléter —</strong> Tu peux enrichir chaque fiche projet avec des captures d'écran, et ajouter une section compétences techniques (Java, Python, PHP, SQL, PostgreSQL, VBA…) ou langues.
   </div>
@@ -216,37 +213,6 @@
     `;
     projList.appendChild(card);
   });
-
-  const matrixContainer = document.getElementById('matrix-container');
-  if(matrixContainer){
-    matrixContainer.innerHTML = `
-      <div class="matrix-section">
-        <h2 class="matrix-heading">Matrice de synthèse</h2>
-        <p class="matrix-sub">Croisement entre les compétences B.U.T. et les projets réalisés.</p>
-        <div class="matrix-scroll">
-          <table class="matrix">
-            <thead>
-              <tr>
-                <th>Compétence / Projet</th>
-                ${PROJECTS.map(p => `<th>${p.code}<br><small style="font-weight:normal;">${p.title.substring(0,25)}...</small></th>`).join('')}
-              </tr>
-            </thead>
-            <tbody>
-              ${COMPETENCES.map(c => `
-                <tr>
-                  <th>${c.id} — ${c.title}</th>
-                  ${PROJECTS.map(p => {
-                    const active = p.comps.includes(c.id);
-                    return `<td><span class="mark ${active ? '' : 'empty'}"></span></td>`;
-                  }).join('')}
-                </tr>
-              `).join('')}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    `;
-  }
 
   const tabComp = document.getElementById('tab-comp');
   const tabProj = document.getElementById('tab-proj');
