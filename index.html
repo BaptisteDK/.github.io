@@ -97,81 +97,71 @@
 (function(){
   const COMPETENCES = [
     {
-      id: 'C1',
       title: "Réaliser un projet",
       proofs: [
-        { text: "Développement d'une application web dynamique en PHP/HTML/CSS", proj: 'p1' },
-        { text: "Programmation orientée objet en Java et mécanismes de jeu vidéo", proj: 'p2' },
-        { text: "Intégration front-end HTML/CSS d'un site complet et billetterie", proj: 'p3' }
+        { text: "Développement d'une application web dynamique en PHP/HTML/CSS", projIndex: 0 },
+        { text: "Programmation orientée objet en Java et mécanismes de jeu vidéo", projIndex: 1 },
+        { text: "Intégration front-end HTML/CSS d'un site complet et billetterie", projIndex: 2 }
       ]
     },
     {
-      id: 'C2',
       title: "Gérer un projet",
       proofs: [
-        { text: "Analyse des besoins et spécifications pour 3 profils utilisateurs", proj: 'p1' },
-        { text: "Planification des étapes du développement, de la conception au livrable", proj: 'p2' },
-        { text: "Conception ergonomique et structuration de l'information", proj: 'p3' }
+        { text: "Analyse des besoins et spécifications pour 3 profils utilisateurs", projIndex: 0 },
+        { text: "Planification des étapes du développement, de la conception au livrable", projIndex: 1 },
+        { text: "Conception ergonomique et structuration de l'information", projIndex: 2 }
       ]
     },
     {
-      id: 'C3',
       title: "Collaborer en équipe",
       proofs: [
-        { text: "Développement collaboratif en trinôme avec gestion du code sur GitHub", proj: 'p1' },
-        { text: "Répartition des rôles et coordination du développement en équipe", proj: 'p2' },
-        { text: "Co-conception et répartition du travail d'intégration web", proj: 'p3' }
+        { text: "Développement collaboratif en trinôme avec gestion du code sur GitHub", projIndex: 0 },
+        { text: "Répartition des rôles et coordination du développement en équipe", projIndex: 1 },
+        { text: "Co-conception et répartition du travail d'intégration web", projIndex: 2 }
       ]
     }
   ];
 
   const PROJECTS = [
     {
-      id: 'p1',
       code: 'SAE Web',
       period: '12/2025 – 01/2026',
       title: "Plateforme de gestion de buvette associative",
       desc: "Création en équipe d'une plateforme web en PHP/HTML/CSS permettant la gestion d'une buvette en ligne avec trois profils : client, barman et gestionnaire.",
-      comps: ['C1','C2','C3'],
+      competencies: ["Réaliser un projet", "Gérer un projet", "Collaborer en équipe"],
       proof: '<a href="https://github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-</a>'
     },
     {
-      id: 'p2',
       code: 'SAE Dev',
       period: '05/2025 – 06/2025',
       title: "Jeu Terraria-like",
       desc: "Création en équipe d'un jeu en Java s'inspirant du jeu Terraria : conception du gameplay, répartition des rôles et coordination du développement.",
-      comps: ['C1','C2','C3'],
+      competencies: ["Réaliser un projet", "Gérer un projet", "Collaborer en équipe"],
       proof: '<a href="https://github.com/DUT-Info-Montreuil/sae_dev_gbf" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/sae_dev_gbf</a>'
     },
     {
-      id: 'p3',
       code: 'SAE Web',
       period: '2024',
       title: "Site web des Jeux Olympiques de Paris 2028",
       desc: "Création en équipe d'un site web en HTML/CSS dédié aux Jeux Olympiques de 2028, incluant notamment une page de billetterie.",
-      comps: ['C1','C2','C3'],
+      competencies: ["Réaliser un projet", "Gérer un projet", "Collaborer en équipe"],
       proof: '<a href="https://thileepanedvin.github.io/Site-JO28/billet.html" target="_blank" rel="noopener">thileepanedvin.github.io/Site-JO28/billet.html</a>'
     }
   ];
-
-  const compById = Object.fromEntries(COMPETENCES.map(c => [c.id, c]));
-  const projById = Object.fromEntries(PROJECTS.map(p => [p.id, p]));
 
   const compList = document.getElementById('comp-list');
   COMPETENCES.forEach(c => {
     const block = document.createElement('div');
     block.className = 'comp-block';
     const proofsHTML = c.proofs.map(pr => {
-      const proj = projById[pr.proj];
+      const proj = PROJECTS[pr.projIndex];
       return `<div class="proof-item">
         <span class="dot"></span>
-        <span>${pr.text} — <a href="#${proj.id}" data-jump="${proj.id}">${proj.code} · ${proj.title}</a></span>
+        <span>${pr.text} — <a href="#" data-jump="${pr.projIndex}">${proj.code} · ${proj.title}</a></span>
       </div>`;
     }).join('');
     block.innerHTML = `
       <div class="comp-head">
-        <span class="comp-code">${c.id}</span>
         <h2 class="comp-title">${c.title}</h2>
       </div>
       <div class="proof-box">
@@ -183,10 +173,10 @@
   });
 
   const projList = document.getElementById('proj-list');
-  PROJECTS.forEach(p => {
+  PROJECTS.forEach((p, index) => {
     const card = document.createElement('div');
     card.className = 'project-card';
-    card.id = p.id;
+    card.dataset.index = index;
     card.innerHTML = `
       <div class="project-top">
         <span class="project-code mono">${p.code}</span>
@@ -195,7 +185,7 @@
       <h3 class="project-title">${p.title}</h3>
       <p class="project-desc">${p.desc}</p>
       <div class="project-comps">
-        ${p.comps.map(id => compById[id] ? `<span class="comp-pill">${compById[id].title}</span>` : '').join('')}
+        ${p.competencies.map(title => `<span class="comp-pill">${title}</span>`).join('')}
       </div>
       <div class="project-proof"><strong>Preuve —</strong> ${p.proof}</div>
     `;
@@ -224,7 +214,7 @@
     e.preventDefault();
     showView('proj');
     requestAnimationFrame(() => {
-      const target = document.getElementById(el.dataset.jump);
+      const target = document.querySelector(`.project-card[data-index="${el.dataset.jump}"]`);
       if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
