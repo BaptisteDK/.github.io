@@ -133,7 +133,7 @@
     },
     {
       code: 'SAE Dev',
-      period: '05/2025 – 06/2025',
+      period: '04/2025 – 06/2025',
       title: "Jeu Terraria-like",
       desc: "Création en équipe d'un jeu en Java s'inspirant du jeu Terraria : conception du gameplay, répartition des rôles et coordination du développement.",
       competencies: ["Réaliser un projet", "Gérer un projet", "Collaborer en équipe"],
@@ -141,7 +141,7 @@
     },
     {
       code: 'SAE Web',
-      period: '2024',
+      period: '10/2024 - 12/2024',
       title: "Site web des Jeux Olympiques de Paris 2028",
       desc: "Création en équipe d'un site web en HTML/CSS dédié aux Jeux Olympiques de 2028, incluant notamment une page de billetterie.",
       competencies: ["Réaliser un projet", "Gérer un projet", "Collaborer en équipe"],
@@ -165,7 +165,7 @@
         <h2 class="comp-title">${c.title}</h2>
       </div>
       <div class="proof-box">
-        <p class="proof-label mono">PREUVES — PROJETS MOBILISÉS</p>
+        <p class="proof-label mono">PROJETS MOBILISÉS</p>
         <div class="proof-list">${proofsHTML}</div>
       </div>
     `;
@@ -187,7 +187,7 @@
       <div class="project-comps">
         ${p.competencies.map(title => `<span class="comp-pill">${title}</span>`).join('')}
       </div>
-      <div class="project-proof"><strong>Preuve —</strong> ${p.proof}</div>
+      <div class="project-proof"><strong>lien . </strong> ${p.proof}</div>
     `;
     projList.appendChild(card);
   });
