@@ -98,32 +98,36 @@
   const COMPETENCES = [
     {
       id: 'C1',
-      title: "Gérer des données de l'information",
+      title: "Développement Web & Logiciel",
       proofs: [
-        { text: "Mise à jour et interrogation de la base de données clients", proj: 'p1' },
-        { text: "Automatisation de flux de données avec des scripts VBA sous Excel", proj: 'p1' },
-        { text: "Création d'outils de reporting et d'un tableau de bord d'analyse", proj: 'p1' },
-        { text: "Conception de la base de données de la plateforme de gestion de buvette", proj: 'p2' }
+        { text: "Développement d'une application web dynamique en PHP/HTML/CSS", proj: 'p1' },
+        { text: "Programmation orientée objet en Java et mécanismes de jeu vidéo", proj: 'p2' },
+        { text: "Intégration front-end HTML/CSS d'un site complet et billetterie", proj: 'p3' }
       ]
     },
     {
       id: 'C2',
-      title: "Conduire un projet",
+      title: "Bases de données",
       proofs: [
-        { text: "Identification des besoins de trois profils utilisateurs (client, barman, gestionnaire)", proj: 'p2' },
-        { text: "Organisation du développement en équipe d'un jeu vidéo, de la conception au livrable", proj: 'p3' },
-        { text: "Développement en équipe d'un site web complet, de la structure à la page de billetterie", proj: 'p4' },
-        { text: "Découverte des processus internes d'une entreprise et de ses outils de gestion", proj: 'p1' }
+        { text: "Conception et requêtage de la base de données (utilisateurs, stocks, commandes)", proj: 'p1' }
       ]
     },
     {
       id: 'C3',
-      title: "Collaborer au sein d'une équipe informatique",
+      title: "Gestion de projet & Analyse",
       proofs: [
-        { text: "Intégration au sein d'une équipe marketing chez TotalEnergies", proj: 'p1' },
-        { text: "Développement en trinôme de la plateforme de gestion de buvette", proj: 'p2' },
-        { text: "Répartition des rôles et coordination pour la réalisation d'un jeu vidéo en équipe", proj: 'p3' },
-        { text: "Travail d'équipe sur la conception d'un site web dédié aux Jeux Olympiques 2028", proj: 'p4' }
+        { text: "Analyse des besoins et spécifications pour 3 profils utilisateurs", proj: 'p1' },
+        { text: "Planification des étapes du développement, de la conception au livrable", proj: 'p2' },
+        { text: "Conception ergonomique et structuration de l'information", proj: 'p3' }
+      ]
+    },
+    {
+      id: 'C4',
+      title: "Travail en équipe",
+      proofs: [
+        { text: "Développement collaboratif en trinôme avec gestion du code sur GitHub", proj: 'p1' },
+        { text: "Répartition des rôles et coordination du développement en équipe", proj: 'p2' },
+        { text: "Co-conception et répartition du travail d'intégration web", proj: 'p3' }
       ]
     }
   ];
@@ -131,38 +135,29 @@
   const PROJECTS = [
     {
       id: 'p1',
-      code: 'Expérience pro',
-      period: '04/2026 – 07/2026',
-      title: "Assistant coordinateur vente — TotalEnergies Marketing France",
-      desc: "Mise à jour et interrogation de la base de données clients, création de scripts VBA sous Excel pour automatiser des flux, et conception d'outils de reporting et d'analyse (dashboard), au sein d'une équipe marketing à Nanterre.",
-      comps: ['C1','C2','C3'],
-      proof: "Poste occupé du 04/2026 au 07/2026 chez TotalEnergies Marketing France, Nanterre."
-    },
-    {
-      id: 'p2',
       code: 'SAÉ Web',
       period: '12/2025 – 01/2026',
       title: "Plateforme de gestion de buvette associative",
-      desc: "Création en équipe (avec Gabin et Romain) d'une plateforme web en PHP/HTML/CSS permettant la gestion d'une buvette en ligne avec trois profils : client, barman et gestionnaire.",
-      comps: ['C1','C2','C3'],
+      desc: "Création en équipe d'une plateforme web en PHP/HTML/CSS permettant la gestion d'une buvette en ligne avec trois profils : client, barman et gestionnaire.",
+      comps: ['C1','C2','C3','C4'],
       proof: '<a href="https://github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-</a>'
     },
     {
-      id: 'p3',
+      id: 'p2',
       code: 'SAÉ Dev',
       period: '05/2025 – 06/2025',
       title: "Jeu Terraria-like",
-      desc: "Création en équipe d'un jeu en Java s'inspirant de Terraria : conception du gameplay, répartition des rôles et coordination du développement.",
-      comps: ['C2','C3'],
+      desc: "Création en équipe d'un jeu en Java s'inspirant du jeu Terraria : conception du gameplay, répartition des rôles et coordination du développement.",
+      comps: ['C1','C3','C4'],
       proof: '<a href="https://github.com/DUT-Info-Montreuil/sae_dev_gbf" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/sae_dev_gbf</a>'
     },
     {
-      id: 'p4',
+      id: 'p3',
       code: 'SAÉ Web',
-      period: '12/2024 – 01/2025',
+      period: '2024',
       title: "Site web des Jeux Olympiques de Paris 2028",
       desc: "Création en équipe d'un site web en HTML/CSS dédié aux Jeux Olympiques de 2028, incluant notamment une page de billetterie.",
-      comps: ['C2','C3'],
+      comps: ['C1','C3','C4'],
       proof: '<a href="https://thileepanedvin.github.io/Site-JO28/billet.html" target="_blank" rel="noopener">thileepanedvin.github.io/Site-JO28/billet.html</a>'
     }
   ];
@@ -207,7 +202,7 @@
       <h3 class="project-title">${p.title}</h3>
       <p class="project-desc">${p.desc}</p>
       <div class="project-comps">
-        ${p.comps.map(id => `<span class="comp-pill">${id} — ${compById[id].title}</span>`).join('')}
+        ${p.comps.map(id => `<span class="comp-pill">${compById[id].title}</span>`).join('')}
       </div>
       <div class="project-proof"><strong>Preuve —</strong> ${p.proof}</div>
     `;
