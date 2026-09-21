@@ -97,6 +97,7 @@
 (function(){
   const COMPETENCES = [
     {
+      id: 'C1',
       title: "Réaliser un projet",
       proofs: [
         { text: "Développement d'une application web dynamique en PHP/HTML/CSS", proj: 'p1' },
@@ -105,6 +106,7 @@
       ]
     },
     {
+      id: 'C2',
       title: "Gérer un projet",
       proofs: [
         { text: "Analyse des besoins et spécifications pour 3 profils utilisateurs", proj: 'p1' },
@@ -113,6 +115,7 @@
       ]
     },
     {
+      id: 'C3',
       title: "Collaborer en équipe",
       proofs: [
         { text: "Développement collaboratif en trinôme avec gestion du code sur GitHub", proj: 'p1' },
@@ -129,7 +132,7 @@
       period: '12/2025 – 01/2026',
       title: "Plateforme de gestion de buvette associative",
       desc: "Création en équipe d'une plateforme web en PHP/HTML/CSS permettant la gestion d'une buvette en ligne avec trois profils : client, barman et gestionnaire.",
-      comps: ['C1','C2','C3','C4'],
+      comps: ['C1','C2','C3'],
       proof: '<a href="https://github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-</a>'
     },
     {
@@ -138,7 +141,7 @@
       period: '05/2025 – 06/2025',
       title: "Jeu Terraria-like",
       desc: "Création en équipe d'un jeu en Java s'inspirant du jeu Terraria : conception du gameplay, répartition des rôles et coordination du développement.",
-      comps: ['C1','C3','C4'],
+      comps: ['C1','C2','C3'],
       proof: '<a href="https://github.com/DUT-Info-Montreuil/sae_dev_gbf" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/sae_dev_gbf</a>'
     },
     {
@@ -147,7 +150,7 @@
       period: '2024',
       title: "Site web des Jeux Olympiques de Paris 2028",
       desc: "Création en équipe d'un site web en HTML/CSS dédié aux Jeux Olympiques de 2028, incluant notamment une page de billetterie.",
-      comps: ['C1','C3','C4'],
+      comps: ['C1','C2','C3'],
       proof: '<a href="https://thileepanedvin.github.io/Site-JO28/billet.html" target="_blank" rel="noopener">thileepanedvin.github.io/Site-JO28/billet.html</a>'
     }
   ];
@@ -192,7 +195,7 @@
       <h3 class="project-title">${p.title}</h3>
       <p class="project-desc">${p.desc}</p>
       <div class="project-comps">
-        ${p.comps.map(id => `<span class="comp-pill">${compById[id].title}</span>`).join('')}
+        ${p.comps.map(id => compById[id] ? `<span class="comp-pill">${compById[id].title}</span>` : '').join('')}
       </div>
       <div class="project-proof"><strong>Preuve —</strong> ${p.proof}</div>
     `;
