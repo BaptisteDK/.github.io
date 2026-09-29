@@ -127,13 +127,13 @@
       code: 'SAÉ Web',
       period: '12/2025 – 01/2026',
       title: "Plateforme de gestion de buvette associative",
-      desc: `Création en équipe (trinôme) d'une application web de gestion de buvette associative, structurée autour d'une architecture <strong>MVC</strong> 
+      desc: `Création en équipe d'une application web de gestion de buvette associative, structurée autour d'une architecture <strong>MVC</strong> 
       (Modèle-Vue-Contrôleur) en PHP. Le projet implémente quatre rôles distincts avec des espaces dédiés : <strong>Admin</strong> (création et configuration 
-      des buvettes, assignation du staff), <strong>Gestionnaire</strong> (catalogue produits, gestion des stocks et approvisionnements avec déduction de 
-      trésorerie, suivi des ventes, gestion des adhésions et des barmen), <strong>Barman</strong> (caisse avec recherche client par email ou scan QR code, 
-      panier dynamique, vue click &amp; collect des commandes en attente, ajustement de stock) et <strong>Client</strong> (navigation, panier, recharge de 
-      solde par buvette).<br><br>L'architecture est organisée en modules indépendants (<code>mod_barman</code>, <code>mod_gestion</code>, <code>mod_admin</code>, 
-      <code>mod_solde</code>…), chacun composé d'un point d'entrée, d'un contrôleur, d'un modèle (accès BDD via PDO avec transactions SQL) et d'une vue 
+      des buvettes, assignation du staff), <strong>Gestionnaire</strong> (catalogue produits, gestion des stocks, suivi des ventes, gestion des adhésions et 
+      des barmen), <strong>Barman</strong> (caisse avec recherche client par email ou scan QR code, panier dynamique, vue click &amp; collect des commandes en attente) 
+      et <strong>Client</strong> (navigation, panier, recharge de solde).
+      
+      <br><br>L'architecture est organisée en modules indépendants (<code>mod_barman</code>, <code>mod_gestion</code>, <code>mod_admin</code>…), chacun composé d'un point d'entrée, d'un contrôleur, d'un modèle (accès BDD via PDO avec transactions SQL) et d'une vue 
       (HTML généré côté serveur). La réactivité de l'interface est assurée par <strong>Vue.js 3</strong> pour la navigation par onglets, et des appels 
       <strong>AJAX</strong> permettent de mettre à jour le panier sans rechargement de page.`,
       tech: ["PHP · MVC · PDO", "MySQL", "Tailwind CSS", "Vue.js 3", "AJAX", "HTML5 QR Code API"],
