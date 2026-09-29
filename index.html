@@ -124,18 +124,18 @@
 
   const PROJECTS = [
     {
-     code: 'SAÉ Web',
-    period: '12/2025 – 01/2026',
-    title: "Plateforme de gestion de buvette associative",
-    desc: `Création en équipe (trinôme) d'une application web de gestion de buvette associative, structurée autour d'une architecture <strong>MVC</strong> (Modèle-Vue-Contrôleur) en PHP. Le projet implémente quatre rôles distincts avec des espaces dédiés : <strong>Admin</strong>, <strong>Gestionnaire</strong>, <strong>Barman</strong> et <strong>Client</strong>.<br><br>L'architecture est organisée en modules indépendants (<code>mod_barman</code>, <code>mod_gestion</code>, <code>mod_admin</code>, <code>mod_solde</code>…), avec accès BDD via PDO (transactions SQL). L'interface utilise <strong>Vue.js 3</strong> pour la navigation et des appels <strong>AJAX</strong> pour la mise à jour dynamique du panier.`,
-    images: [
-      { src: 'image_72e445.png', alt: 'Interface d\'accueil et liste des buvettes' },
-      { src: 'Image1.png', alt: 'Fiche produit Coca-Cola' },
-      { src: 'Image2.png', alt: 'Fiche produit Sandwich' }
-    ],
-    tech: ["PHP · MVC · PDO", "MySQL", "Tailwind CSS", "Vue.js 3", "AJAX", "HTML5 QR Code API"],
-    competencies: ["Réaliser un projet", "Gérer un projet", "Collaborer en équipe"],
-    proof: '<a href="https://github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-</a>'    
+      code: 'SAÉ Web',
+      period: '12/2025 – 01/2026',
+      title: "Plateforme de gestion de buvette associative",
+      desc: `Création en équipe (trinôme) d'une application web de gestion de buvette associative, structurée autour d'une architecture <strong>MVC</strong> (Modèle-Vue-Contrôleur) en PHP. Le projet implémente quatre rôles distincts avec des espaces dédiés : <strong>Admin</strong>, <strong>Gestionnaire</strong>, <strong>Barman</strong> et <strong>Client</strong>.<br><br>L'architecture est organisée en modules indépendants (<code>mod_barman</code>, <code>mod_gestion</code>, <code>mod_admin</code>, <code>mod_solde</code>…), avec accès BDD via PDO (transactions SQL). L'interface utilise <strong>Vue.js 3</strong> pour la navigation et des appels <strong>AJAX</strong> pour la mise à jour dynamique du panier.`,
+      images: [
+        { src: 'image_72e445.png', alt: 'Interface d\\'accueil et liste des buvettes' },
+        { src: 'Image1.png', alt: 'Fiche produit Coca-Cola' },
+        { src: 'Image2.png', alt: 'Fiche produit Sandwich' }
+      ],
+      tech: ["PHP · MVC · PDO", "MySQL", "Tailwind CSS", "Vue.js 3", "AJAX", "HTML5 QR Code API"],
+      competencies: ["Réaliser un projet", "Gérer un projet", "Collaborer en équipe"],
+      proof: '<a href="https://github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-</a>'
     },
     {
       code: 'SAÉ Dev',
@@ -183,9 +183,21 @@
     const card = document.createElement('div');
     card.className = 'project-card';
     card.dataset.index = index;
+    
     const techHTML = p.tech
       ? `<div class="project-tech">${p.tech.map(t => `<span class="tech-pill">${t}</span>`).join('')}</div>`
       : '';
+
+    const galleryHTML = p.images && p.images.length
+      ? `<div class="project-gallery">
+          ${p.images.map(img => `
+            <a href="${img.src}" target="_blank" rel="noopener" class="gallery-item" title="Agrandir l'image">
+              <img src="${img.src}" alt="${img.alt}" loading="lazy" />
+            </a>
+          `).join('')}
+         </div>`
+      : '';
+
     card.innerHTML = `
       <div class="project-top">
         <span class="project-code mono">${p.code}</span>
@@ -193,6 +205,7 @@
       </div>
       <h3 class="project-title">${p.title}</h3>
       <p class="project-desc">${p.desc}</p>
+      ${galleryHTML}
       ${techHTML}
       <div class="project-comps">
         ${p.competencies.map(t => `<span class="comp-pill">${t}</span>`).join('')}
