@@ -124,14 +124,17 @@
 
   const PROJECTS = [
     {
-      code: 'SAÉ Web',
+      code: 'SAE Web',
       period: '12/2025 – 01/2026',
       title: "Plateforme de gestion de buvette associative",
-      desc: `Création en équipe (trinôme) d'une application web de gestion de buvette associative, structurée autour d'une architecture <strong>MVC</strong> 
-      (Modèle-Vue-Contrôleur) en PHP. Le projet implémente quatre rôles distincts avec des espaces dédiés : <strong>Admin</strong>, <strong>Gestionnaire</strong>,
-      <strong>Barman</strong> et <strong>Client</strong>.<br><br>L'architecture est organisée en modules indépendants (<code>mod_barman</code>, 
-      <code>mod_gestion</code>, <code>mod_admin</code>, <code>mod_solde</code>…), avec accès BDD via PDO (transactions SQL). L'interface utilise <strong>Vue.js 3</strong>
-      pour la navigation et des appels <strong>AJAX</strong> pour la mise à jour dynamique du panier.`,
+      desc: `Création en équipe d'une application web de gestion de buvette associative, structurée autour d'une architecture <strong>MVC</strong> 
+      (Modèle-Vue-Contrôleur) en PHP. Le projet implémente quatre rôles distincts avec des espaces dédiés : <strong>Admin</strong> (création et configuration 
+      des buvettes, assignation du staff), <strong>Gestionnaire</strong> (catalogue produits, gestion des stocks et approvisionnements, gestion 
+      des adhésions et des barmen), <strong>Barman</strong> (caisse avec recherche client par email ou scan QR code, 
+      panier dynamique, ajustement de stock) et <strong>Client</strong> (navigation, panier, recharge de solde par buvette).
+      <br><br>L'architecture est organisée en modules indépendants (<code>mod_barman</code>, <code>mod_gestion</code>, <code>mod_admin</code>…), chacun composé 
+      d'un point d'entrée, d'un contrôleur, d'un modèle (accès BDD via PDO avec transactions SQL) et d'une vue (HTML généré côté serveur). La réactivité de 
+      l'interface est assurée par <strong>Vue.js 3</strong> pour la navigation par onglets, et des appels <strong>AJAX</strong> permettent de mettre à jour le panier sans rechargement de page.`,
       images: [
         { src: 'buvettes.png', alt: "Interface d'accueil et liste des buvettes" },
         { src: 'Image1.png', alt: "Fiche produit Coca-Cola" },
@@ -142,7 +145,7 @@
       proof: '<a href="https://github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-</a>'
     },
     {
-      code: 'SAÉ Dev',
+      code: 'SAE Dev',
       period: '04/2025 – 06/2025',
       title: "Jeu Terraria-like",
       desc: "Création en équipe d'un jeu en Java s'inspirant du jeu Terraria : conception du gameplay, répartition des rôles et coordination du développement.",
@@ -150,7 +153,7 @@
       proof: '<a href="https://github.com/DUT-Info-Montreuil/sae_dev_gbf" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/sae_dev_gbf</a>'
     },
     {
-      code: 'SAÉ Web',
+      code: 'SAE Web',
       period: '10/2024 – 12/2024',
       title: "Site web des Jeux Olympiques de Paris 2028",
       desc: "Création en équipe d'un site web en HTML/CSS dédié aux Jeux Olympiques de 2028, incluant notamment une page de billetterie.",
