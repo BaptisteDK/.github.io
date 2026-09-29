@@ -234,7 +234,30 @@ section.view.active { display: block; }
 .project-period { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--ink-soft); }
 .project-title { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; margin: 10px 0; }
 .project-desc { color: var(--ink-soft); font-size: 15px; max-width: 72ch; }
-.project-comps { margin-top: 18px; display: flex; gap: 8px; flex-wrap: wrap; }
+.project-desc strong { color: var(--ink); font-weight: 600; }
+.project-desc code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.82em;
+  background: var(--teal-soft);
+  color: var(--teal);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* Tech pills */
+.project-tech { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 4px; }
+.tech-pill {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 500;
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--teal-soft);
+}
+
+.project-comps { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
 .comp-pill {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11.5px;
