@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Baptiste Durand-Keohavong</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Baptiste Durand-Keohavong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -17,7 +17,7 @@
       <div>
         <p class="eyebrow">PORTFOLIO — B.U.T. INFORMATIQUE · 3E ANNÉE</p>
         <h1 class="name">Baptiste Durand-Keohavong</h1>
-        <p class="role">Étudiant en BUT Informatique . IUT de Montreuil, Université Paris 8</p>
+        <p class="role">Étudiant en BUT Informatique · IUT de Montreuil, Université Paris 8</p>
       </div>
       <div class="header-meta">
         <div><a href="mailto:bapt.dukeo@gmail.com">bapt.dukeo@gmail.com</a></div>
@@ -82,7 +82,7 @@
   </section>
 
   <div class="maquette-note">
-    <strong>À compléter —</strong> Tu peux enrichir chaque fiche projet avec des captures d'écran, et ajouter une section compétences techniques (Java, Python, PHP, SQL, PostgreSQL, VBA…) ou langues.
+    <strong>À compléter —</strong> Tu peux enrichir les fiches des deux autres projets (Terraria-like, site JO 2028) avec tes souvenirs ou des fichiers sources, et ajouter une section compétences techniques ou langues.
   </div>
 
 </main>
@@ -99,7 +99,7 @@
     {
       title: "Réaliser un projet",
       proofs: [
-        { text: "Développement d'une application web dynamique en PHP/HTML/CSS", projIndex: 0 },
+        { text: "Architecture MVC en PHP, gestion de 4 rôles et transactions base de données", projIndex: 0 },
         { text: "Programmation orientée objet en Java et mécanismes de jeu vidéo", projIndex: 1 },
         { text: "Intégration front-end HTML/CSS d'un site complet et billetterie", projIndex: 2 }
       ]
@@ -107,7 +107,7 @@
     {
       title: "Gérer un projet",
       proofs: [
-        { text: "Analyse des besoins et spécifications pour 3 profils utilisateurs", projIndex: 0 },
+        { text: "Analyse des besoins et spécifications pour 4 profils utilisateurs distincts", projIndex: 0 },
         { text: "Planification des étapes du développement, de la conception au livrable", projIndex: 1 },
         { text: "Conception ergonomique et structuration de l'information", projIndex: 2 }
       ]
@@ -115,7 +115,7 @@
     {
       title: "Collaborer en équipe",
       proofs: [
-        { text: "Développement collaboratif en trinôme avec gestion du code sur GitHub", projIndex: 0 },
+        { text: "Développement collaboratif en trinôme, versionnage Git et répartition modulaire", projIndex: 0 },
         { text: "Répartition des rôles et coordination du développement en équipe", projIndex: 1 },
         { text: "Co-conception et répartition du travail d'intégration web", projIndex: 2 }
       ]
@@ -124,15 +124,24 @@
 
   const PROJECTS = [
     {
-      code: 'SAE Web',
+      code: 'SAÉ Web',
       period: '12/2025 – 01/2026',
       title: "Plateforme de gestion de buvette associative",
-      desc: "Création en équipe d'une plateforme web en PHP/HTML/CSS permettant la gestion d'une buvette en ligne avec trois profils : client, barman et gestionnaire.",
+      desc: `Création en équipe (trinôme) d'une application web de gestion de buvette associative, structurée autour d'une architecture <strong>MVC</strong> 
+      (Modèle-Vue-Contrôleur) en PHP. Le projet implémente quatre rôles distincts avec des espaces dédiés : <strong>Admin</strong> (création et configuration 
+      des buvettes, assignation du staff), <strong>Gestionnaire</strong> (catalogue produits, gestion des stocks et approvisionnements avec déduction de 
+      trésorerie, suivi des ventes, gestion des adhésions et des barmen), <strong>Barman</strong> (caisse avec recherche client par email ou scan QR code, 
+      panier dynamique, vue click &amp; collect des commandes en attente, ajustement de stock) et <strong>Client</strong> (navigation, panier, recharge de 
+      solde par buvette).<br><br>L'architecture est organisée en modules indépendants (<code>mod_barman</code>, <code>mod_gestion</code>, <code>mod_admin</code>, 
+      <code>mod_solde</code>…), chacun composé d'un point d'entrée, d'un contrôleur, d'un modèle (accès BDD via PDO avec transactions SQL) et d'une vue 
+      (HTML généré côté serveur). La réactivité de l'interface est assurée par <strong>Vue.js 3</strong> pour la navigation par onglets, et des appels 
+      <strong>AJAX</strong> permettent de mettre à jour le panier sans rechargement de page.`,
+      tech: ["PHP · MVC · PDO", "MySQL", "Tailwind CSS", "Vue.js 3", "AJAX", "HTML5 QR Code API"],
       competencies: ["Réaliser un projet", "Gérer un projet", "Collaborer en équipe"],
       proof: '<a href="https://github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-</a>'
     },
     {
-      code: 'SAE Dev',
+      code: 'SAÉ Dev',
       period: '04/2025 – 06/2025',
       title: "Jeu Terraria-like",
       desc: "Création en équipe d'un jeu en Java s'inspirant du jeu Terraria : conception du gameplay, répartition des rôles et coordination du développement.",
@@ -140,8 +149,8 @@
       proof: '<a href="https://github.com/DUT-Info-Montreuil/sae_dev_gbf" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/sae_dev_gbf</a>'
     },
     {
-      code: 'SAE Web',
-      period: '10/2024 - 12/2024',
+      code: 'SAÉ Web',
+      period: '10/2024 – 12/2024',
       title: "Site web des Jeux Olympiques de Paris 2028",
       desc: "Création en équipe d'un site web en HTML/CSS dédié aux Jeux Olympiques de 2028, incluant notamment une page de billetterie.",
       competencies: ["Réaliser un projet", "Gérer un projet", "Collaborer en équipe"],
@@ -177,6 +186,9 @@
     const card = document.createElement('div');
     card.className = 'project-card';
     card.dataset.index = index;
+    const techHTML = p.tech
+      ? `<div class="project-tech">${p.tech.map(t => `<span class="tech-pill">${t}</span>`).join('')}</div>`
+      : '';
     card.innerHTML = `
       <div class="project-top">
         <span class="project-code mono">${p.code}</span>
@@ -184,10 +196,11 @@
       </div>
       <h3 class="project-title">${p.title}</h3>
       <p class="project-desc">${p.desc}</p>
+      ${techHTML}
       <div class="project-comps">
-        ${p.competencies.map(title => `<span class="comp-pill">${title}</span>`).join('')}
+        ${p.competencies.map(t => `<span class="comp-pill">${t}</span>`).join('')}
       </div>
-      <div class="project-proof"><strong>lien : </strong> ${p.proof}</div>
+      <div class="project-proof"><strong>Lien : </strong>${p.proof}</div>
     `;
     projList.appendChild(card);
   });
@@ -197,7 +210,7 @@
   const viewComp = document.getElementById('view-comp');
   const viewProj = document.getElementById('view-proj');
 
-  function showView(which){
+  function showView(which) {
     const compActive = which === 'comp';
     tabComp.setAttribute('aria-selected', compActive ? 'true' : 'false');
     tabProj.setAttribute('aria-selected', compActive ? 'false' : 'true');
@@ -208,14 +221,14 @@
   tabComp.addEventListener('click', () => showView('comp'));
   tabProj.addEventListener('click', () => showView('proj'));
 
-  document.addEventListener('click', (e) => {
+  document.addEventListener('click', e => {
     const el = e.target.closest('[data-jump]');
-    if(!el) return;
+    if (!el) return;
     e.preventDefault();
     showView('proj');
     requestAnimationFrame(() => {
       const target = document.querySelector(`.project-card[data-index="${el.dataset.jump}"]`);
-      if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 
