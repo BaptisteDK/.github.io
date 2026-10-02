@@ -271,17 +271,6 @@ section.view.active { display: block; }
 .project-proof { margin-top: 18px; font-size: 14px; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 16px; }
 .project-proof strong { color: var(--ink); font-weight: 600; }
 
-.maquette-note {
-  margin-top: 40px;
-  padding: 20px 24px;
-  background: var(--paper-raised);
-  border: 1px dashed var(--line);
-  border-radius: var(--radius);
-  font-size: 14px;
-  color: var(--ink-soft);
-}
-.maquette-note strong { color: var(--ink); }
-
 footer {
   border-top: 1px solid var(--line);
   padding: 32px 0 50px;
