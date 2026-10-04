@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+ 
 <header class="top">
   <div class="wrap">
     <div class="top-row">
@@ -31,7 +31,7 @@
     </p>
   </div>
 </header>
-
+ 
 <section class="formation-section">
   <div class="wrap">
     <p class="formation-heading">Formation</p>
@@ -59,7 +59,7 @@
     </div>
   </div>
 </section>
-
+ 
 <nav class="view-toggle">
   <div class="wrap">
     <div class="toggle-row" role="tablist" aria-label="Mode de lecture du portfolio">
@@ -68,27 +68,27 @@
     </div>
   </div>
 </nav>
-
+ 
 <main class="wrap">
-
+ 
   <!-- VUE PAR COMPETENCE -->
   <section class="view active" id="view-comp" role="tabpanel" aria-labelledby="tab-comp">
     <div id="comp-list"></div>
   </section>
-
+ 
   <!-- VUE PAR PROJET -->
   <section class="view" id="view-proj" role="tabpanel" aria-labelledby="tab-proj">
     <div class="project-grid" id="proj-list"></div>
   </section>
-  
+ 
 </main>
-
+ 
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;">
     <span>Baptiste Durand-Keohavong · BUT Informatique, IUT de Montreuil · Montreuil (93100)</span>
   </div>
 </footer>
-
+ 
 <script>
 (function(){
   const COMPETENCES = [
@@ -96,41 +96,34 @@
       title: "Réaliser un projet",
       proofs: [
         { text: "Architecture MVC en PHP, gestion de 4 rôles et transactions base de données", projIndex: 0 },
-        { text: "Programmation orientée objet en Java et mécanismes de jeu vidéo", projIndex: 1 },
-        { text: "Intégration front-end HTML/CSS d'un site complet et billetterie", projIndex: 2 }
+        { text: "Architecture MVC en Java avec moteur de jeu 2D, inventaire, craft et PNJ", projIndex: 1 },
+        { text: "Modélisation relationnelle et multidimensionnelle de données massives sur la qualité de l'air", projIndex: 2 }
       ]
     },
     {
       title: "Gérer un projet",
       proofs: [
         { text: "Analyse des besoins et spécifications pour 4 profils utilisateurs distincts", projIndex: 0 },
-        { text: "Planification des étapes du développement, de la conception au livrable", projIndex: 1 },
-        { text: "Conception ergonomique et structuration de l'information", projIndex: 2 }
+        { text: "Répartition des responsabilités par couche MVC et coordination Git en trinôme", projIndex: 1 },
+        { text: "Analyse de données complexes et incertaines, choix de modélisation justifiés et livrables structurés", projIndex: 2 }
       ]
     },
     {
       title: "Collaborer en équipe",
       proofs: [
         { text: "Développement collaboratif en trinôme, versionnage Git et répartition modulaire", projIndex: 0 },
-        { text: "Répartition des rôles et coordination du développement en équipe", projIndex: 1 },
-        { text: "Co-conception et répartition du travail d'intégration web", projIndex: 2 }
+        { text: "Travail en équipe avec Maven et GitHub, code versionné par commits thématiques", projIndex: 1 },
+        { text: "Travail en binôme/trinôme : répartition de l'analyse, du nettoyage et de la modélisation des données", projIndex: 2 }
       ]
     }
   ];
-
+ 
   const PROJECTS = [
     {
-      code: 'SAE Web',
+      code: 'SAÉ Web',
       period: '12/2025 – 01/2026',
       title: "Plateforme de gestion de buvette associative",
-      desc: `Création en équipe d'une application web de gestion de buvette associative, structurée autour d'une architecture <strong>MVC</strong> 
-      (Modèle-Vue-Contrôleur) en PHP. Le projet implémente quatre rôles distincts avec des espaces dédiés : <strong>Admin</strong> (création et configuration 
-      des buvettes, assignation du staff), <strong>Gestionnaire</strong> (catalogue produits, gestion des stocks et approvisionnements, gestion 
-      des adhésions et des barmen), <strong>Barman</strong> (caisse avec recherche client par email ou scan QR code, 
-      panier dynamique, ajustement de stock) et <strong>Client</strong> (navigation, panier, recharge de solde par buvette).
-      <br><br>L'architecture est organisée en modules indépendants (<code>mod_barman</code>, <code>mod_gestion</code>, <code>mod_admin</code>…), chacun composé 
-      d'un point d'entrée, d'un contrôleur, d'un modèle (accès BDD via PDO avec transactions SQL) et d'une vue (HTML généré côté serveur). La réactivité de 
-      l'interface est assurée par <strong>Vue.js 3</strong> pour la navigation par onglets, et des appels <strong>AJAX</strong> permettent de mettre à jour le panier sans rechargement de page.`,
+      desc: `Création en équipe (trinôme) d'une application web de gestion de buvette associative, structurée autour d'une architecture <strong>MVC</strong> (Modèle-Vue-Contrôleur) en PHP. Le projet implémente quatre rôles distincts avec des espaces dédiés : <strong>Admin</strong> (création et configuration des buvettes, assignation du staff), <strong>Gestionnaire</strong> (catalogue produits, gestion des stocks et approvisionnements avec déduction de trésorerie, suivi des ventes, gestion des adhésions et des barmen), <strong>Barman</strong> (caisse avec recherche client par email ou scan QR code, panier dynamique, vue click &amp; collect des commandes en attente, ajustement de stock) et <strong>Client</strong> (navigation, panier, recharge de solde par buvette).<br><br>L'architecture est organisée en modules indépendants (<code>mod_barman</code>, <code>mod_gestion</code>, <code>mod_admin</code>, <code>mod_solde</code>…), chacun composé d'un point d'entrée, d'un contrôleur, d'un modèle (accès BDD via PDO avec transactions SQL) et d'une vue (HTML généré côté serveur). La réactivité de l'interface est assurée par <strong>Vue.js 3</strong> pour la navigation par onglets, et des appels <strong>AJAX</strong> permettent de mettre à jour le panier sans rechargement de page.`,
       images: [
         { src: 'buvettes.png', alt: "Interface d'accueil et liste des buvettes" },
         { src: 'Image1.png', alt: "Fiche produit Coca-Cola" },
@@ -141,32 +134,33 @@
       proof: '<a href="https://github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-</a>'
     },
     {
-      code: 'SAE Dev',
+      code: 'SAÉ Dev',
       period: '04/2025 – 06/2025',
       title: "Jeu Terraria-like",
-      desc: `Création en équipe d'un jeu de plateforme et d'exploration 2D en <strong>Java</strong>, inspiré de Terraria. Le projet intègre une gestion complète 
-      de la physique et de la carte : génération d'un monde par blocs, détection des collisions, gravité, gestion du joueur et des entités, ainsi que des 
-      interactions avec l'environnement (minage, pose de blocs, inventaire et système de crafting).<br><br>Développé en appliquant les principes de la 
-      <strong>programmation orientée objet </strong> et une architecture <strong>MVC</strong> (Modèle-Vue-Contrôleur). L'interface graphique s'appuie sur 
-      <strong>JavaFX</strong> avec une boucle de jeu (game loop) dédiée pour assurer la mise à jour des états et le rendu fluide à chaque image.`,
+      desc: `Création en équipe (trinôme) d'un jeu de plateforme et d'exploration 2D en <strong>Java</strong>, inspiré de Terraria. Le projet intègre une gestion complète de la physique et de la carte : génération d'un monde par blocs, détection des collisions, gravité, gestion du joueur et des entités, ainsi que des interactions avec l'environnement (minage, pose de blocs, inventaire et système de crafting).<br><br>Développé en appliquant les principes de la <strong>programmation orientée objet</strong> et une architecture <strong>MVC</strong> stricte. Le <strong>modèle</strong> regroupe la logique du jeu : <code>Terrain</code>, <code>Bloc</code>, <code>Joueur</code>, <code>Personnage</code>, <code>Inventaire</code>, <code>Item</code>, <code>Outil</code>, <code>Degat</code>, <code>ZoneSpawn</code>, ainsi que les sous-systèmes <code>craft/</code> et <code>pnj/</code>. Les <strong>vues</strong> sont découpées par domaine fonctionnel (<code>TerrainVue</code>, <code>PersonnageVue</code>, <code>InventaireVue</code>, <code>CraftVue</code>, <code>PnjVue</code>, <code>GameOverVue</code>…) et les <strong>contrôleurs</strong> gèrent la boucle de jeu, la saisie clavier et la caméra (<code>ControleurJeu</code>, <code>ControleurClavier</code>, <code>ControleurCamera</code>).`,
       images: [
-        { src: 'terraria1.png', alt: "image du jeu" },
-        { src: 'terraria2.png', alt: "image du jeu" },
+        { src: 'terraria1.png', alt: "Image du jeu" },
+        { src: 'terraria2.png', alt: "Image du jeu" }
       ],
-      tech: ["Java", "Architecture MVC", "JavaFX", "Programmation Orientée Objet", "Tilemap", "Git"],
+      tech: ["Java", "Architecture MVC", "JavaFX", "Programmation Orientée Objet", "Tilemap", "Maven", "Git"],
       competencies: ["Réaliser un projet", "Gérer un projet", "Collaborer en équipe"],
       proof: '<a href="https://github.com/DUT-Info-Montreuil/sae_dev_gbf" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/sae_dev_gbf</a>'
     },
     {
-      code: 'SAE Web',
-      period: '10/2024 – 12/2024',
-      title: "Site web des Jeux Olympiques de Paris 2028",
-      desc: "Création en équipe d'un site web en HTML/CSS dédié aux Jeux Olympiques de 2028, incluant notamment une page de billetterie.",
+      code: 'SAÉ S4',
+      period: '02/2025 – 04/2025',
+      title: "Base de données — Qualité de l'air mondiale",
+      desc: `Projet de données réalisé en binôme/trinôme autour de la <strong>qualité de l'air dans les villes du monde</strong>. L'objectif était de construire une chaîne complète allant de l'analyse de données brutes jusqu'à leur visualisation, en passant par deux niveaux de modélisation.<br><br>
+<strong>Analyse &amp; nettoyage des données</strong> — Trois sources publiques massives ont été exploitées : <a href="https://openaq.org" target="_blank" rel="noopener">OpenAQ</a> (mesures quotidiennes de polluants : PM2.5, NO₂, CO, O₃, SO₂), <a href="https://simplemaps.com/data/world-cities" target="_blank" rel="noopener">World Cities Database</a> (caractéristiques géographiques et démographiques des villes) et <a href="https://data.worldbank.org/" target="_blank" rel="noopener">World Bank Indicators</a> (indicateurs socio-économiques : émissions CO₂, urbanisation, taux de motorisation). L'analyse a porté sur la compréhension des paramètres, l'identification des données manquantes, aberrantes ou incohérentes, et leur correction avant import.<br><br>
+<strong>Modélisation relationnelle</strong> — Conception d'un schéma entité-relation respectant les règles d'intégrité (clés primaires/étrangères, normalisation), puis création de la base et import des données nettoyées via scripts SQL.<br><br>
+<strong>Modélisation multidimensionnelle</strong> — Conception d'un modèle en étoile (schéma flocon) pour l'analyse OLAP : table de faits centrée sur les mesures de pollution, dimensions Ville, Pays, Polluant, Temps. Rédaction et comparaison de plus de 20 requêtes SQL incluant des opérateurs OLAP (<code>ROLLUP</code>, <code>CUBE</code>, <code>GROUPING SETS</code>) avec mesures des temps d'exécution sur les deux modèles.<br><br>
+<strong>Visualisation avec Qlik</strong> — Création d'une application Qlik focalisée sur un sous-ensemble de données incohérentes (valeurs aberrantes de pollution) avec graphiques et mini-rapport d'analyse explicative.`,
+      tech: ["PostgreSQL", "SQL · OLAP", "Modélisation relationnelle", "Modélisation multidimensionnelle", "Qlik Sense", "Python (nettoyage)", "OpenAQ · World Bank"],
       competencies: ["Réaliser un projet", "Gérer un projet", "Collaborer en équipe"],
-      proof: '<a href="https://thileepanedvin.github.io/Site-JO28/billet.html" target="_blank" rel="noopener">thileepanedvin.github.io/Site-JO28/billet.html</a>'
+      proof: ''
     }
   ];
-
+ 
   const compList = document.getElementById('comp-list');
   COMPETENCES.forEach(c => {
     const block = document.createElement('div');
@@ -189,17 +183,17 @@
     `;
     compList.appendChild(block);
   });
-
+ 
   const projList = document.getElementById('proj-list');
   PROJECTS.forEach((p, index) => {
     const card = document.createElement('div');
     card.className = 'project-card';
     card.dataset.index = index;
-    
+ 
     const techHTML = p.tech
       ? `<div class="project-tech">${p.tech.map(t => `<span class="tech-pill">${t}</span>`).join('')}</div>`
       : '';
-
+ 
     const galleryHTML = p.images && p.images.length
       ? `<div class="project-gallery">
           ${p.images.map(img => `
@@ -209,7 +203,11 @@
           `).join('')}
          </div>`
       : '';
-
+ 
+    const proofHTML = p.proof
+      ? `<div class="project-proof"><strong>Lien : </strong>${p.proof}</div>`
+      : '';
+ 
     card.innerHTML = `
       <div class="project-top">
         <span class="project-code mono">${p.code}</span>
@@ -222,16 +220,16 @@
       <div class="project-comps">
         ${p.competencies.map(t => `<span class="comp-pill">${t}</span>`).join('')}
       </div>
-      <div class="project-proof"><strong>Lien : </strong>${p.proof}</div>
+      ${proofHTML}
     `;
     projList.appendChild(card);
   });
-
+ 
   const tabComp = document.getElementById('tab-comp');
   const tabProj = document.getElementById('tab-proj');
   const viewComp = document.getElementById('view-comp');
   const viewProj = document.getElementById('view-proj');
-
+ 
   function showView(which) {
     const compActive = which === 'comp';
     tabComp.setAttribute('aria-selected', compActive ? 'true' : 'false');
@@ -239,10 +237,10 @@
     viewComp.classList.toggle('active', compActive);
     viewProj.classList.toggle('active', !compActive);
   }
-
+ 
   tabComp.addEventListener('click', () => showView('comp'));
   tabProj.addEventListener('click', () => showView('proj'));
-
+ 
   document.addEventListener('click', e => {
     const el = e.target.closest('[data-jump]');
     if (!el) return;
@@ -253,9 +251,10 @@
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
-
+ 
 })();
 </script>
-
+ 
 </body>
 </html>
+ 
