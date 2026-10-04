@@ -11,7 +11,7 @@
   --card-shadow: 0 4px 12px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.06);
   --radius: 8px;
 }
-
+ 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --paper: #0F172A;
@@ -26,7 +26,7 @@
     --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 }
-
+ 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body {
@@ -39,13 +39,13 @@ body {
 ::selection { background: var(--brass-soft); }
 a { color: inherit; }
 .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
-
+ 
 .wrap {
   max-width: 980px;
   margin: 0 auto;
   padding: 0 28px;
 }
-
+ 
 /* Header */
 header.top {
   border-bottom: 1px solid var(--line);
@@ -96,7 +96,7 @@ h1.name {
   transition: border-color 0.2s;
 }
 .header-meta a:hover { border-bottom-color: var(--brass); }
-
+ 
 .intro {
   margin-top: 28px;
   font-size: 16px;
@@ -104,7 +104,7 @@ h1.name {
   color: var(--ink-soft);
 }
 .intro strong { color: var(--ink); font-weight: 600; }
-
+ 
 /* Formation */
 .formation-section {
   border-bottom: 1px solid var(--line);
@@ -137,7 +137,7 @@ h1.name {
 .formation-when { text-align: right; flex: none; }
 .formation-period { font-size: 13px; font-weight: 500; color: var(--brass); margin: 0 0 3px; }
 .formation-loc { font-size: 12.5px; color: var(--ink-soft); margin: 0; }
-
+ 
 /* Nav / Toggle */
 nav.view-toggle {
   position: sticky;
@@ -176,11 +176,11 @@ nav.view-toggle {
   background: var(--paper-raised);
 }
 .tab-btn:not([aria-selected="true"]):hover { color: var(--ink); }
-
+ 
 main { padding: 40px 0 90px; }
 section.view { display: none; }
 section.view.active { display: block; }
-
+ 
 /* Blocks Compétences */
 .comp-block {
   border: 1px solid var(--line);
@@ -219,7 +219,7 @@ section.view.active { display: block; }
 }
 .proof-item a { text-decoration: none; font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--line); transition: border-color 0.2s; }
 .proof-item a:hover { border-bottom-color: var(--brass); color: var(--brass); }
-
+ 
 /* Cards Projets */
 .project-grid { display: grid; gap: 20px; }
 .project-card {
@@ -235,6 +235,9 @@ section.view.active { display: block; }
 .project-title { font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 600; margin: 10px 0; }
 .project-desc { color: var(--ink-soft); font-size: 15px; max-width: 72ch; }
 .project-desc strong { color: var(--ink); font-weight: 600; }
+.project-desc em { font-style: italic; }
+.project-desc a { color: var(--brass); border-bottom: 1px solid transparent; text-decoration: none; transition: border-color 0.2s; }
+.project-desc a:hover { border-bottom-color: var(--brass); }
 .project-desc code {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.82em;
@@ -243,8 +246,8 @@ section.view.active { display: block; }
   padding: 1px 6px;
   border-radius: 4px;
 }
-
-/* Tech pills */
+ 
+/* Tech pills — variante teal */
 .project-tech { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 4px; }
 .tech-pill {
   font-family: 'IBM Plex Mono', monospace;
@@ -256,7 +259,8 @@ section.view.active { display: block; }
   border-radius: 20px;
   background: var(--teal-soft);
 }
-
+ 
+/* Compétence pills — variante brass */
 .project-comps { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
 .comp-pill {
   font-family: 'IBM Plex Mono', monospace;
@@ -268,24 +272,10 @@ section.view.active { display: block; }
   border-radius: 20px;
   background: var(--brass-soft);
 }
+ 
 .project-proof { margin-top: 18px; font-size: 14px; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 16px; }
 .project-proof strong { color: var(--ink); font-weight: 600; }
-
-footer {
-  border-top: 1px solid var(--line);
-  padding: 32px 0 50px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 12.5px;
-  color: var(--ink-soft);
-  background: var(--paper-raised);
-}
-
-@media (max-width: 640px) {
-  .wrap { padding: 0 18px; }
-  .header-meta { text-align: left; }
-  .top-row { flex-direction: column; align-items: flex-start; }
-  .formation-when { text-align: left; }
-}
+ 
 /* Galerie d'images dans les projets */
 .project-gallery {
   display: grid;
@@ -293,7 +283,6 @@ footer {
   gap: 12px;
   margin: 18px 0;
 }
-
 .gallery-item {
   display: block;
   border-radius: 6px;
@@ -303,13 +292,11 @@ footer {
   aspect-ratio: 16 / 10;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
-
 .gallery-item:hover {
   transform: translateY(-2px);
   border-color: var(--brass);
   box-shadow: var(--card-shadow);
 }
-
 .gallery-item img {
   width: 100%;
   height: 100%;
@@ -317,3 +304,20 @@ footer {
   object-position: top center;
   display: block;
 }
+ 
+footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 0 50px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  background: var(--paper-raised);
+}
+ 
+@media (max-width: 640px) {
+  .wrap { padding: 0 18px; }
+  .header-meta { text-align: left; }
+  .top-row { flex-direction: column; align-items: flex-start; }
+  .formation-when { text-align: left; }
+}
+ 
