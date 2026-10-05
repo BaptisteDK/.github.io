@@ -120,7 +120,7 @@
  
   const PROJECTS = [
     {
-      code: 'SAÉ Web',
+      code: 'SAE Web',
       period: '12/2025 – 01/2026',
       title: "Plateforme de gestion de buvette associative",
       desc: `Création en équipe d'une application web de gestion de buvette associative, structurée autour d'une architecture MVC (Modèle-Vue-Contrôleur) en PHP. Le projet implémente quatre rôles distincts avec des espaces dédiés : Admin (création et configuration des buvettes, assignation du staff), Gestionnaire (catalogue produits, gestion des stocks et approvisionnements, gestion des adhésions et des barmen), Barman (caisse avec recherche client par email ou scan QR code, panier dynamique, ajustement de stock) et Client (navigation, panier, recharge de solde par buvette).<br><br>L'architecture est organisée en modules indépendants (<code>mod_barman</code>, <code>mod_gestion</code>, <code>mod_admin</code>…), chacun composé d'un point d'entrée, d'un contrôleur, d'un modèle (accès BDD via PDO avec transactions SQL) et d'une vue (HTML généré côté serveur). La réactivité de l'interface est assurée par Vue.js 3 pour la navigation par onglets, et des appels AJAX permettent de mettre à jour le panier sans rechargement de page.`,
@@ -134,7 +134,7 @@
       proof: '<a href="https://github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/SAE-WEB-gabin-baptiste-romain-</a>'
     },
     {
-      code: 'SAÉ Dev',
+      code: 'SAE Dev',
       period: '04/2025 – 06/2025',
       title: "Jeu Terraria-like",
       desc: `Création en équipe d'un jeu de plateforme et d'exploration 2D en Java, inspiré de Terraria. Le projet intègre une gestion complète de la physique et de la carte : génération d'un monde par blocs, détection des collisions, gravité, gestion du joueur et des entités, ainsi que des interactions avec l'environnement (minage, pose de blocs, inventaire et système de crafting).<br><br>Développé en appliquant les principes de la programmation orientée objet et une architecture MVC (Modèle-Vue-Contrôleur). L'interface graphique s'appuie sur JavaFX avec une boucle de jeu (game loop) dédiée pour assurer la mise à jour des états et le rendu fluide à chaque image.`,
@@ -147,14 +147,18 @@
       proof: '<a href="https://github.com/DUT-Info-Montreuil/sae_dev_gbf" target="_blank" rel="noopener">github.com/DUT-Info-Montreuil/sae_dev_gbf</a>'
     },
         {
-      code: 'SAÉ S4',
+      code: 'SAE S4',
       period: '02/2025 – 04/2025',
       title: "Base de données de la qualité de l'air mondiale",
       desc: `Projet de données réalisé en équipe autour de la <strong>qualité de l'air dans les villes du monde</strong>. L'objectif était de construire une chaîne complète allant de l'analyse de données brutes jusqu'à leur visualisation, en passant par deux niveaux de modélisation.<br><br>
 <strong>Analyse &amp; nettoyage des données</strong> : Trois sources publiques massives ont été exploitées ; <a href="https://openaq.org" target="_blank" rel="noopener">OpenAQ</a> (mesures quotidiennes de polluants : PM2.5, NO₂, CO, O₃, SO₂), <a href="https://simplemaps.com/data/world-cities" target="_blank" rel="noopener">World Cities Database</a> (caractéristiques géographiques et démographiques des villes) et <a href="https://data.worldbank.org/" target="_blank" rel="noopener">World Bank Indicators</a> (indicateurs socio-économiques : émissions CO₂, urbanisation, taux de motorisation). L'analyse a porté sur la compréhension des paramètres, l'identification des données manquantes, aberrantes ou incohérentes, et leur correction avant import.<br><br>
 <strong>Modélisation relationnelle</strong> : Conception d'un schéma entité-relation normalisé et création de la base via scripts SQL.<br>
 <strong>Modélisation multidimensionnelle</strong> : Création d'un modèle en étoile pour l'analyse OLAP et comparaison des temps d'exécution de plus de 20 requêtes SQL entre les deux architectures.<br><br>
-<strong>Visualisation avec Qlik</strong> : Création d'une application Qlik focalisée sur un sous-ensemble de données incohérentes (valeurs aberrantes de pollution) avec graphiques et mini-rapport d'analyse explicative.`,
+<strong>Application Qlik</strong> : Création d'une application Qlik afin d'avoir une visualisation globale de la base de données`,
+      images: [
+        { src: 'qlik1.png', alt: "ensemble de graphique" },
+        { src: 'qlik2.png', alt: "graphique en point" }
+      ],
       tech: ["PostgreSQL", "SQL", "Modélisation relationnelle", "Modélisation multidimensionnelle", "Qlik Sense"],
       competencies: ["Réaliser un projet", "Gérer un projet", "Collaborer en équipe"],
       proof: ''
